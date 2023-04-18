@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de Video</title>
+    <link rel="shortcut icon" href="./img/Group-61.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+      <a href="#" title="EdVisto">
+        <img src="/img/edvisto-logo.png.webp" alt="edvisto-logo" class="logo">
+      </a>
+        <a href="#" title="Menú" class="menu">
+          <span class="fa fa-bars"></span>
+          <span class="label">MENÚ</span>
+        </a>
+        <a href="#" title="Mis Videos" class="video">
+          <span class="fas fa-film"></span>
+          <span class="label">Mis Videos</span>
+        </a>
+        <a href="#" title="Calificaciones" class="calificaciones">
+          <span class="fa far fa-clipboard"></span>
+          <span class="label">Calificaciones</span>
+        </a>
+        <a href="#" title="Ajustes" class="ajustes">
+          <span class="fa fa-gear"></span>
+          <span class="label">Ajustes</span>
+        </a>
+    </nav>
+    <h1>CARGAR VIDEO</h1>
+	<div class="form">
+    <i class="fa-brands fa-youtube"></i>
+    <i class="fas fa-link"></i>
+		<input type="url" id="url" name="url" placeholder="Copiar link de Youtube" required>
+    <div class="form-container">
+      <div class="form-group">
+          <label for="titulo-video">Título:</label><br>
+          <input type="text" onkeyup="this.value = this.value.toUpperCase();" id="titulo-video" name="titulo-video" placeholder="Agregar el titulo del video" required maxlength="60"><br>
+          
+          <label for="lider-proyecto">Líder del proyecto:</label><br>
+          <input type="text" id="lider-proyecto" name="lider-proyecto" placeholder="Asignar nombre y apellido del líder" required><br>
+      
+          <label for="email-lider">Mail del líder del proyecto:</label><br>
+          <input type="email" id="email-lider" name="email-lider" placeholder="Asignar e-mail del líder" required><br>
+      
+          <label for="email-profesor">Mail del profesor:</label><br>
+          <input type="email" id="email-profesor" name="email-profesor" placeholder="Agregar e-mail del profesor" required><br>
+      </div>
+      <div class="form-group">
+          <label for="descripcion">Descripción:</label><br>
+          <textarea name="descripcion" id="descripcion" cols="36" rows="14" placeholder="Agregar una breve descripción del video" required maxlength="250"></textarea><br>
+          <p id="resultado"></p>
+          
+          <div class="button-group">
+            <input type="reset" id="cancelar" value="Cancelar" class="cancelar-button">
+            <input type="submit" id="guardar" value="Guardar" class="guardar-button">
+          </div>
+      </div>
+  </div>
+  <script src="/js/script.js"></script>
+  </body>
+  </html>

@@ -1,65 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carga de Video</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+    <title>Ingreso</title>
+    <link rel="shortcut icon" href="./img/Group-61.ico" type="image/x-icon">
 </head>
 <body>
-    <nav>
-      <a href="#logo" title="logo">
-        <img src="img/edvisto-logo.png.webp" alt="edvisto-logo">
-      </a>
-        <a href="#menu" title="Menú">
-          <span class="fa fa-bars"></span>
-          <span class="label">Menú</span>
-        </a>
-        <a href="#evaluacion" title="Evaluación" class="color-azul">
-          <span class="fa fa-pencil-square"></span>
-          <span class="label">Evaluación</span>
-        </a>
-        <a href="#analisis" title="Análisis" class="color-verde">
-          <span class="fa fa-bar-chart"></span>
-          <span class="label">Análisis</span>
-        </a>
-        <a href="#contacto" title="Contacto" class="color-verde">
-          <span class="fa fa-envelope"></span>
-          <span class="label">Contacto</span>
-        </a>
-        <a href="#ajustes" title="Ajustes" class="color-naranja">
-          <span class="fa fa-gear"></span>
-          <span class="label">Ajustes</span>
-        </a>
-    </nav>
-    <h1>CARGAR VIDEO</h1>
-	<div class="form">
-    <i class="fa-brands fa-youtube"></i>
-    <i class="fas fa-link"></i>
-		<input type="text" id="url" name="url" placeholder="    Copiar link de Youtube">
-		<button type="button" id="subirvideo"> <i class="fas fa-cloud-upload-alt"></i> SUBIR</button>
-	</div>
-    <div class="form-container">
-        <div class="form-group">
-            <iframe id="video" width="504" height="284" src="https://www.youtube.com/embed/'+idVideo+'" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe><br>
-            <label for="liderproyecto">Líder del proyecto:</label><br>
-            <input type="text" id="liderproyecto" name="liderproyecto" placeholder="Asignar nombre y apellido del lider"><br>
-            <label for="maillider">Mail del lídel del proyecto:</label><br>
-            <input type="text" id="maillider" name="maillider" placeholder="Asignar nombre y apellido del lider">
+        <div class="form-container">
+                <img src="./img/edvisto-logo 2.svg" alt="logo" class="logo">
+
+                <form action="/" class="form">
+                    <h1 class="titulo">Correo Electrónico</h1>
+                    <input type="email" id="email" placeholder="ejemplo@mail.com" class="input-email" required><br>
+
+                    <label for="profesor" class="subtitulo-1">Soy Profesor</label>
+                    <input type="radio" id="profesor" value="soy-profesor" name="ingreso-choice" required><br>
+
+                    <label for="estudiante" class="subtitulo-2">Soy Estudiante</label>
+                    <input type="radio" id="estudiante" value="soy-estudiante" name="ingreso-choice" required><br>
+
+                    <input type="submit" value="INGRESAR" class="ingreso-button">
+                </form>
+
+                <img src="./img/Customer-support-feedback.svg" alt="fondo" class="fondo">
+            </div>
         </div>
-        <div class="form-group">
-            <label for="titulovideo">Título:</label><br>
-            <input type="text" id="titulovideo" name="titulovideo" placeholder="Agregue el titulo del video"><br>
-            <label for="descripcion">Descripción:</label><br>
-            <textarea name="descripcion" id="descripcion" cols="36" rows="12.5" placeholder="Agregue una breve descripción del video"></textarea><br>
-            <input type="reset" id="cancelar" value="Cancelar">
-            <input type="submit" id="guardar" value="Guardar">
-        </div>
-    </div>
 </body>
 </html>

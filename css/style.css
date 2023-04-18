@@ -1,155 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Raleway', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap');
+
+:root{
+    --verde: #56BC8C;
+    --white: #FFFFFF;
+    --azul: #354760;
+    --naranja: #FF8E51;
+    --black: #000000;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
 }
 
-nav {
-  position: fixed;
-  height: 100vh;
-  width: 4rem;
-  background: #D8D8D8;
-  overflow: hidden;
-  transition: width .3s ease;
-  top: 0;
-  border-radius: 0px 30px 30px 0px;
+body{
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--verde);
 }
 
-img {
-  padding: 1px 1px;
+.form-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
-nav:hover, img{
-  width: 10rem;
-}
-
-nav .icon-bar img {
-  display: block;
-  width: 18px;
-  height: 2px;
-  margin-top: 5px;
-}
-
-nav a {
-  color:#354760;
-  text-decoration: none;
-  display: table;
-  width: 10rem;
-  border-radius: 20px;
-}
-
-.color-azul:hover{
-  background-color: #354760;
-  color: white;
-}
-
-.color-verde:hover{
-  background-color: #56BC8C;
-  color: white;
-}
-
-.color-naranja:hover{
-  background-color: #ff8e51;
-  color: white;
-}
-
-nav a .fa {
-  width: 4rem;
-  display: table-cell;
-  font-size: 20px;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-nav a.label {
-  display: table-cell;
-}
-
-h1{
-    text-align: center;
-    size: 45px;
-    margin-top: 3rem;
-    color: #56BC8C;
-    font-weight: 900 bold;
-}
-
-.fa-brands {
-    position: absolute;
-    color: red;
-    font-size: 40px;
-    margin-left: -50px;
-    margin-top: 10px;
+.logo{
+    width: 20%;
+    align-self: flex-end;
+    padding-right: 60px;
 }
 
 .form{
-    text-align: center;
-    padding: 1rem;
-    margin: 20px;
+   padding-left: 100px;
 }
 
-.fas.fa-link{
-  position: absolute;
-  margin-left: 10px;
-  margin-top: 20px;
-  font-size: 20px;
+.titulo{
+    color: var(--white);
 }
 
-#url{
-  width: 40%;
+.input-email{
+    height: 35px;
+    width: 500px;
+    border-radius: 10px;
+    border: 1px solid var(--black);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: var(--md);
+    padding-left: 15px;
+    font-weight: 300;
+    margin-bottom: 30px;
 }
 
-.form-container {
-    display: flex ;
-    justify-content: flex-end;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    padding-left: 4rem;
-    font-size: 20px;
-  }
+label, input[type="radio"] {
+    margin-bottom: 20px;
+}
   
-  .form-group {
-    flex-basis: 45%;
-  }
+.subtitulo-1{
+    font-size: var(--lg);
+    font-weight: 300;
+    margin-right: 21px;
+}
 
-  input[type=text], textarea {
-    width: 80%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid #000;
-    border-radius: 18px;
-    font-size: 18px;
+.subtitulo-2{
+    font-size: var(--lg);
+    font-weight: 300;
+    margin-right: 4px;
+}
+
+input[type="radio"]{
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.ingreso-button{
+    font-size: var(--md);
+    color: var(--white);
+    width: 150px;
+    height: 50px;
+    background-color: var(--naranja);
+    border: 3px solid var(--white);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 200px;
+}
 
-  textarea{
-    resize: none;
-  }
-
-    #subirvideo{
-    background-color: #ff8e51;
-    margin-top: 10px;
-    margin-left: 10px;
-  }
-
-  input[type=reset], input[type=submit], button[type=button]{
+.fondo{
     position: absolute;
-    border-radius: 15px;
-    font-size: 20px;
-    border: 1px solid #000;
-    text-align: justify;
-    color: white;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 7px 17px;
-  }
+    align-self: flex-end;
+    margin-top: 200px;
+    z-index: -4;
+}
 
-  #guardar {
-    background-color: #56BC8C;
-    left: 1200px;
-  }
+@media (max-width: 640px) {
+    .logo{
+        width: 40%;
+        align-self: center;
+        margin-left: 30px;
+    }
 
-  #cancelar{
-    background-color: #354760;
-    left: 1070px;
-  }
+    .input-email{
+        width: 80%;
+    }
+
+    .ingreso-button{
+        width: 30%;
+        align-self: center;
+        margin-left: 100px;
+        font-size: var(--sm);
+    }
+
+    .fondo{
+        display: none;
+    }
+
+    .form{
+        padding-left: 50px;
+
+    }
+
+    .form-container{
+        margin-top: 100px;
+    }
+}

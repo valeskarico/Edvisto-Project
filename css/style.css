@@ -55,13 +55,13 @@ label, input[type="radio"] {
     margin-bottom: 20px;
 }
   
-.subtitulo-1{
+.profesor{
     font-size: var(--lg);
     font-weight: 300;
     margin-right: 21px;
 }
 
-.subtitulo-2{
+.estudiante{
     font-size: var(--lg);
     font-weight: 300;
     margin-right: 4px;

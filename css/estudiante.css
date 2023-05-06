@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+nav {
+  position: fixed;
+  height: 100vh;
+  width: 4rem;
+  background: #D8D8D8;
+  overflow: hidden;
+  transition: width .3s ease;
+  top: 0;
+  border-radius: 0px 30px 30px 0px;
+  z-index: 9000000;
+}
+
+nav a {
+  color:#354760;
+  text-decoration: none;
+  display: table;
+  width: 10.5rem;
+  border-radius: 20px;
+}
+
+nav:hover{
+  width: 11rem;
+}
+
+.logo {
+  width: 9.5rem;
+  padding-left: 6px;
+}
+
+.menu:hover{
+  color: black;
+  font-weight: 900;
+}
+
+.video{
+  margin-bottom: 20px;
+}
+
+.video:hover{
+  background-color: #354760;
+  color: white;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.salir:hover{
+  background-color: #ff8e51;
+  color: white;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+nav a .fa-bars, .fa-film, .fa-sign-in-alt{
+  width: 4rem;
+  display: table-cell;
+  font-size: 20px;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+span.label {
+  display: table-cell;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 50px;
+  padding-left: 250px;
+  padding-right: 180px;
+}
+
+p.email-ingreso{
+  text-align: right;
+  color: #354760;
+  font-size: medium;
+  padding-right: 20px;
+  font-weight: 600;
+}
+
+img.bienvenida{
+  width: 400px;
+  display: flex;
+  align-self: flex-end;
+}
+
+h1.titulo{
+  text-align: left;
+  size: 2.813rem;
+  color: #56BC8C;
+  font-weight: 900 bold;
+  margin-bottom: 40px;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+h3{
+  font-weight: 500;
+  color: #354760;
+  margin-bottom: 5px;
+}
+
+p.subtitulo-proceso{
+  font-weight: 500;
+  color: #999999;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-size: large;
+  padding-right: 100px;
+}
+
+.form-url{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.fa-brands {
+  position: absolute;
+  color: red;
+  font-size: 2.5rem;
+  margin-left: -3.125rem;
+  margin-top: 0.625rem;
+  z-index: -1;
+}
+
+.fa-link{
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+label{
+  margin-left: 50px;
+  position: absolute;
+  margin-top: 20px;
+  background: white;
+}
+
+input#nombre-lider{
+  margin-left: 20px;
+}
+
+input#email-profesor{
+  margin-left: 20px;
+}
+
+input#titulo-proyecto{
+  margin-left: 20px;
+}
+
+
+input[type=text], input[type=email], input[type=url]{
+  width: 80%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border: 1px solid #000;
+  border-radius: 18px;
+  font-size: 1.125rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-left: 50px;
+}
+
+#url{
+  width: 40%;
+  margin-bottom: 50px;
+  padding-left: 40px;
+}
+
+button[type=submit]{
+  border-radius: 15px;
+  background: #e98862;
+  font-size: 1.25rem;
+  border: 1px solid #e98862;
+  text-align: justify;
+  color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 7px 17px;
+  cursor: pointer;
+}

@@ -15,6 +15,10 @@ body{
     margin: 0;
     font-family: 'Raleway', sans-serif;
     background-color: var(--verde);
+    background-image: url(../img/Customer.png);
+    background-position-y: bottom;
+    background-position-x: right;
+    background-repeat: no-repeat;
 }
 
 .form-container{
@@ -51,27 +55,76 @@ body{
     margin-bottom: 30px;
 }
 
-label, input[type="radio"] {
-    margin-bottom: 20px;
+label{
+    margin-bottom: 30px;
 }
   
 .profesor{
     font-size: var(--lg);
     font-weight: 300;
-    margin-right: 21px;
 }
 
 .estudiante{
     font-size: var(--lg);
     font-weight: 300;
-    margin-right: 4px;
 }
 
-input[type="radio"]{
-    width: 15px;
-    height: 15px;
+.profesor, .estudiante {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
     cursor: pointer;
-}
+  }
+  
+
+  .profesor input[type="radio"], .estudiante input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    margin-top: 3px;
+  }
+
+  .checkmark.one{
+    margin-right: -18px;
+  }
+  
+  .profesor input[type="radio"]:checked ~ 
+  .checkmark:after, 
+  .estudiante input[type="radio"]:checked ~ 
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--azul);
+  }
+
+  .profesor, .estudiante {
+    position: relative;
+    padding-right: 32px;
+  }
+  
+
+  .profesor input[type="radio"]:checked ~ .checkmark, .estudiante input[type="radio"]:checked ~ .checkmark {
+    border-color: var(--azul);
+  }
+  
 
 .ingreso-button{
     font-size: var(--md);
@@ -84,13 +137,7 @@ input[type="radio"]{
     border-radius: 20px;
     cursor: pointer;
     margin-left: 200px;
-}
-
-.fondo{
-    position: absolute;
-    align-self: flex-end;
-    margin-top: 200px;
-    z-index: -4;
+    margin-top: 20px;
 }
 
 @media (max-width: 640px) {
@@ -111,10 +158,6 @@ input[type="radio"]{
         font-size: var(--sm);
     }
 
-    .fondo{
-        display: none;
-    }
-
     .form{
         padding-left: 50px;
 
@@ -122,5 +165,9 @@ input[type="radio"]{
 
     .form-container{
         margin-top: 100px;
+    }
+
+    body{
+        background-image: none;
     }
 }

@@ -3,9 +3,9 @@ function validarAcceso() {
   var rol = document.querySelector('input[name="rol"]:checked').value;
 
   if (email === "profesor@email.com" && rol === "teacher") {
-    window.location.href = "../pages/profesor.html";
+    window.location.href = "./pages/profesor.html";
   } else if (email === "estudiante@email.com" && rol === "student") {
-    window.location.href = "../pages/estudiante.html";
+    window.location.href = "./pages/estudiante.html";
   } else {
     event.preventDefault();
   }

@@ -7,63 +7,106 @@
     <title>Carga de Video</title>
     <link rel="shortcut icon" href="./img/Group-61.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
-    <link rel="stylesheet" href="/css/style2.css">
+    <link rel="stylesheet" href="/css/estudiante.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-      <a href="#" title="EdVisto">
-        <img src="/img/edvisto-logo.png.webp" alt="edvisto-logo" class="logo">
-      </a>
-        <a href="#" title="Menú" class="menu">
-          <span class="fa fa-bars"></span>
-          <span class="label">MENÚ</span>
-        </a>
-        <a href="#" title="Mis Videos" class="video">
-          <span class="fas fa-film"></span>
-          <span class="label">Mis Videos</span>
-        </a>
-        <a href="#" title="Calificaciones" class="calificaciones">
-          <span class="fa far fa-clipboard"></span>
-          <span class="label">Calificaciones</span>
-        </a>
-        <a href="#" title="Ajustes" class="ajustes">
-          <span class="fa fa-gear"></span>
-          <span class="label">Ajustes</span>
-        </a>
-    </nav>
-    <h1>CARGAR VIDEO</h1>
-	<div class="form">
-    <i class="fa-brands fa-youtube"></i>
-    <i class="fas fa-link"></i>
-		<input type="url" id="url" name="url" placeholder="Copiar link de Youtube" required>
+  <nav>
+    <a href="#" title="EdVisto">
+      <img src="/img/edvisto-logo.png.webp" alt="edvisto-logo" class="logo">
+    </a>
+    <a href="#" class="menu">
+      <span class="fa fa-bars"></span>
+      <span class="label">MENÚ</span>
+    </a>
+    <a href="#" class="video">
+      <span class="fas fa-film"></span>
+      <span class="label">Mis Videos</span>
+    </a>
+    <a href="#" class="salir">
+      <span class="fas fa-sign-in-alt"></span>
+      <span class="label">Salir</span>
+    </a>
+  </nav>
+  <div class="container">
+    <p class="email-ingreso"><span id="email">estudiante@email.com</span></p>
+    <img src="/img/Bienvenida.png" alt="mensaje de bienvenida" class="bienvenida">
+    <h1 class="titulo">CARGAR PROYECTO</h1>
+      
     <div class="form-container">
-      <div class="form-group">
-          <label for="titulo-video">Título:</label><br>
-          <input type="text" onkeyup="this.value = this.value.toUpperCase();" id="titulo-video" name="titulo-video" placeholder="Agregar el titulo del video" required maxlength="60"><br>
-          
-          <label for="lider-proyecto">Líder del proyecto:</label><br>
-          <input type="text" id="lider-proyecto" name="lider-proyecto" placeholder="Asignar nombre y apellido del líder" required><br>
-      
-          <label for="email-lider">Mail del líder del proyecto:</label><br>
-          <input type="email" id="email-lider" name="email-lider" placeholder="Asignar e-mail del líder" required><br>
-      
-          <label for="email-profesor">Mail del profesor:</label><br>
-          <input type="email" id="email-profesor" name="email-profesor" placeholder="Agregar e-mail del profesor" required><br>
-      </div>
-      <div class="form-group">
-          <label for="descripcion">Descripción:</label><br>
-          <textarea name="descripcion" id="descripcion" cols="36" rows="14" placeholder="Agregar una breve descripción del video" required maxlength="250"></textarea><br>
-          <p id="resultado"></p>
-          
-          <div class="button-group">
-            <input type="reset" id="cancelar" value="Cancelar" class="cancelar-button">
-            <input type="submit" id="guardar" value="Guardar" class="guardar-button">
+
+        <form name="formulario" class="formulario uno" action="">
+            <div class="form-group">
+              <h3 class="titulo-proceso">1- PRIMEROS PASOS</h3>
+              <p class="subtitulo-proceso">En este video, el grupo se presenta, y comienza su camino. Pueden contar sus propuestas y expectativas. No duden en consultar con su docente.</p>
+
+              <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
+              <input type="text" name="nombre-lider" id="nombre-lider" placeholder="Nombre completo del lider"><br>
+
+              <label class="email-profesor">EMAIL DEL PROFESOR</label><br>
+              <input type="email" name="email-profesor" id="email-profesor" placeholder="E-mail del profesor"><br>
+
+              <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
+              <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="Agrega el nombre del proyecto" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
+            </div>
+            
+            <div class="form-url">
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fas fa-link"></i>
+                <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
+                <button type="submit" class="submit-button" ><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+            </div>
+        </form>
+
+        <form name="formulario" class="formulario dos" action="">
+          <div class="form-group">
+            <h3 class="titulo-proceso">2- ¡MANOS A LA OBRA!</h3>
+            <p class="subtitulo-proceso">Es momento de llevar a la práctica nuestras ideas, documentando cada paso ¡A experimentar! Acerquen sus inquietudes al docente.</p>
+
+            <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
+            <input type="text" name="nombre-lider" id="nombre-lider" placeholder="Nombre completo del lider"><br>
+
+            <label class="email-profesor">EMAIL DEL PROFESOR</label><br>
+            <input type="email" name="email-profesor" id="email-profesor" placeholder="E-mail del profesor"><br>
+
+            <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
+            <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="Agrega el nombre del proyecto" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
           </div>
-      </div>
+          
+          <div class="form-url">
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fas fa-link"></i>
+              <input type="url" id="url" name="url" placeholder="Pegar link de YouTube">
+              <button type="submit" class="submit-button" ><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+          </div>
+        </form>
+
+        <form name="formulario" class="formulario tres" action="">
+          <div class="form-group">
+            <h3 class="titulo-proceso">3- ¿QUÉ APRENDIMOS?</h3>
+            <p class="subtitulo-proceso">Repasando las tareas anteriores, como grupo pueden comentar sus reflexiones, opiniones y conclusiones. No olviden conversar sobre su trabajo en equipo, los obstáculos y qué les pareció la actividad. Compartan con el docente cualquier pregunta que tengan.</p>
+
+            <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
+            <input type="text" name="nombre-lider" id="nombre-lider" placeholder="Nombre completo del lider"><br>
+
+            <label class="email-profesor">EMAIL DEL PROFESOR</label><br>
+            <input type="email" name="email-profesor" id="email-profesor" placeholder="E-mail del profesor"><br>
+
+            <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
+            <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="Agrega el nombre del proyecto" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
+          </div>
+          
+          <div class="form-url">
+              <i class="fa-brands fa-youtube"></i>
+              <i class="fas fa-link"></i>
+              <input type="url" id="url" name="url" placeholder="Pegar link de YouTube">
+              <button type="submit" class="submit-button" ><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+          </div>
+        </form>
+    </div>
   </div>
-  <script src="/js/script.js"></script>
-  </body>
-  </html>
+
+</body>
+</html>

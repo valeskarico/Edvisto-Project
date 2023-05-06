@@ -12,25 +12,29 @@
     <link rel="shortcut icon" href="./img/Group-61.ico" type="image/x-icon">
 </head>
 <body>
-        <div class="form-container">
-                <img src="./img/edvisto-logo 2.svg" alt="logo" class="logo">
+    <div class="form-container">
+        <img src="/img/edvisto-logo.png.webp" alt="logo" class="logo">
+        
+        <form name="formulario" class="form" action="#" onsubmit="validarAcceso();">
 
-                <form action="#" class="form" name="formulario" onsubmit="validarAcceso();">
-                    <h1 class="titulo">Correo Electrónico</h1>
-                    <input type="email" id="email" placeholder="ejemplo@mail.com" class="input-email"><br>
+          <h1 class="titulo">Correo Electrónico</h1>
+          <input type="email" name="email" id="email" placeholder="ejemplo@mail.com" class="input-email" maxlength="256"><br>
 
-                    <label for="profesor" class="profesor">Soy Profesor</label>
-                    <input type="radio" id="teacher" value="teacher" name="rol"><br>
+          <label class="profesor">
+            Soy Profesor
+            <input type="radio" name="rol" value="teacher">
+            <span class="checkmark one"></span>
+          </label><br>
 
-                    <label for="estudiante" class="estudiante">Soy Estudiante</label>
-                    <input type="radio" id="student" value="student" name="rol"><br>
+          <label class="estudiante">
+            Soy Estudiante
+            <input type="radio" name="rol" value="student">
+            <span class="checkmark two"></span>
+          </label><br>
 
-                    <input type="submit" value="INGRESAR" class="ingreso-button">
-                </form>
-
-                <img src="./img/Customer-support-feedback.svg" alt="fondo" class="fondo">
-            </div>
-        </div>
+          <input type="submit" value="INGRESAR" class="ingreso-button">
+  
+        </form>
     <script src="./js/ingreso.js"></script>
 </body>
 </html>

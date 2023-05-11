@@ -136,8 +136,8 @@ p.subtitulo-proceso{
   position: absolute;
   color: red;
   font-size: 2.5rem;
-  margin-left: -3.125rem;
-  margin-top: 0.625rem;
+  margin-left: -60px;
+  margin-top: 10px;
   z-index: -1;
 }
 

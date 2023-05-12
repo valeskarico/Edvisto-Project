@@ -111,36 +111,28 @@ h1.titulo{
   flex-wrap: wrap;
 }
 
-h3{
-  font-weight: 500;
-  color: #354760;
-  margin-bottom: 5px;
-  margin-top: 20px;
-}
-
 p.subtitulo-proceso{
   font-weight: 500;
   color: #999999;
   margin-bottom: 50px;
-  padding-left: 20px;
   font-size: large;
-  padding-right: 100px;
   line-height: 28px;
+  padding-top: 20px;
 }
 
 .form-url{
   margin-top: 20px;
   text-align: center;
   padding-bottom: 20px;
+  padding-left: 50px;
 }
 
 .fa-brands {
   position: absolute;
   color: red;
   font-size: 2.5rem;
-  margin-left: -3.125rem;
-  margin-top: 0.625rem;
-  z-index: -1;
+  margin-left: -60px;
+  margin-top: 10px;
 }
 
 .fa-link{
@@ -207,4 +199,54 @@ button[type=submit]{
 
 .listo{
   margin-left: 10px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 90%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 18px;
+}
+
+.active.blue, .accordion.blue:hover {
+  background-color: #354760;
+  color: white; 
+}
+
+.active.green, .accordion.green:hover {
+  background-color: #56BC8C;
+  color: white; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid black;
+  border-radius: 18px;
+  width: 85%;
+  margin-bottom: 20px;
+}
+
+.accordion:after {
+  content: '\002B';
+  font-size: 20px;
+  color: #354760;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+  color: white;
 }

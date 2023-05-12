@@ -25,7 +25,7 @@
       <span class="fas fa-film"></span>
       <span class="label">Mis Videos</span>
     </a>
-    <a href="/index.html" class="salir">
+    <a href="../index.html" class="salir">
       <span class="fas fa-sign-in-alt"></span>
       <span class="label">Salir</span>
     </a>
@@ -53,67 +53,61 @@
         </div>
       </form>
 
-        <form name="formulario" class="formulario uno" action="">
-            <div class="form-group">
-              <h3 class="titulo-proceso">1- PRIMEROS PASOS</h3>
-              <p class="subtitulo-proceso">En este video, el grupo se presenta, y comienza su camino. Pueden contar sus propuestas y expectativas. No duden en consultar con su docente.</p>
-            </div>
+      <button class="accordion blue titulo-proceso">1- PRIMEROS PASOS</button>
+      <div class="panel">
+         <p class="subtitulo-proceso">En este video, el grupo se presenta, y comienza su camino. Pueden contar sus propuestas y expectativas. No duden en consultar con su docente.</p>
+ 
+         <div class="form-url">
+             <i class="fa-brands fa-youtube"></i>
+             <i class="fas fa-link"></i>
+             <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
+             <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+         </div>
+      </div>
+      
+      <button class="accordion blue titulo-proceso">2- ¡MANOS A LA OBRA!</button>
+      <div class="panel">
+         <p class="subtitulo-proceso">Es momento de llevar a la práctica nuestras ideas, documentando cada paso ¡A experimentar! Acerquen sus inquietudes al docente.</p>
+ 
+         <div class="form-url">
+             <i class="fa-brands fa-youtube"></i>
+             <i class="fas fa-link"></i>
+             <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
+             <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+         </div>
+      </div>
 
-            <div class="form-url">
-              <i class="fa-brands fa-youtube"></i>
-              <i class="fas fa-link"></i>
-              <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
-              <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
-            </div>
-        </form>
+      <button class="accordion blue titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
+      <div class="panel">
+         <p class="subtitulo-proceso">Repasando las tareas anteriores, como grupo pueden comentar sus reflexiones, opiniones y conclusiones. No olviden conversar sobre su trabajo en equipo, los obstáculos y qué les pareció la actividad. Compartan con el docente cualquier pregunta que tengan.</p>
+ 
+         <div class="form-url">
+             <i class="fa-brands fa-youtube"></i>
+             <i class="fas fa-link"></i>
+             <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
+             <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+         </div>
+      </div>
 
-        <form name="formulario" class="formulario dos" action="">
-          <div class="form-group">
-            <h3 class="titulo-proceso">2- ¡MANOS A LA OBRA!</h3>
-            <p class="subtitulo-proceso">Es momento de llevar a la práctica nuestras ideas, documentando cada paso ¡A experimentar! Acerquen sus inquietudes al docente.</p>
+      <div class="calificaciones">
+        <h1 class="titulo">CALIFICACIONES</h1>
+
+        <button class="accordion green titulo-proceso">1- PRIMEROS PASOS</button>
+          <div class="panel">
+            <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
           </div>
           
-          <div class="form-url">
-              <i class="fa-brands fa-youtube"></i>
-              <i class="fas fa-link"></i>
-              <input type="url" id="url" name="url" placeholder="Pegar link de YouTube">
-              <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
-          </div>
-        </form>
-
-        <form name="formulario" class="formulario tres" action="">
-          <div class="form-group">
-            <h3 class="titulo-proceso">3- ¿QUÉ APRENDIMOS?</h3>
-            <p class="subtitulo-proceso">Repasando las tareas anteriores, como grupo pueden comentar sus reflexiones, opiniones y conclusiones. No olviden conversar sobre su trabajo en equipo, los obstáculos y qué les pareció la actividad. Compartan con el docente cualquier pregunta que tengan.</p>
-          </div>
-          
-          <div class="form-url">
-              <i class="fa-brands fa-youtube"></i>
-              <i class="fas fa-link"></i>
-              <input type="url" id="url" name="url" placeholder="Pegar link de YouTube">
-              <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
-          </div>
-        </form>
-
-        <div class="calificaciones">
-          <h1 class="titulo">CALIFICACIONES</h1>
-
-          <div class="form-group">
-            <h3 class="titulo-proceso">1- PRIMEROS PASOS</h3>
+          <button class="accordion green titulo-proceso">2- ¡MANOS A LA OBRA!</button>
+          <div class="panel">
             <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
           </div>
 
-          <div class="form-group">
-            <h3 class="titulo-proceso">2- ¡MANOS A LA OBRA!</h3>
+          <button class="accordion green titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
+          <div class="panel">
             <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
           </div>
-
-          <div class="form-group">
-            <h3 class="titulo-proceso">3- ¿QUÉ APRENDIMOS?</h3>
-            <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
-          </div>
-        </div>
+      </div>
     </div>
-  </div>
+    <script src="../js/estudiante.js"></script>
 </body>
 </html>

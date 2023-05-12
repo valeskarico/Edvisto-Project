@@ -102,7 +102,7 @@ h1.titulo{
   size: 2.813rem;
   color: #56BC8C;
   font-weight: 900 bold;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .form-container{
@@ -121,15 +121,17 @@ h3{
 p.subtitulo-proceso{
   font-weight: 500;
   color: #999999;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
   padding-left: 20px;
   font-size: large;
   padding-right: 100px;
+  line-height: 28px;
 }
 
 .form-url{
   margin-top: 20px;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 .fa-brands {
@@ -186,7 +188,7 @@ input[type=text], input[type=email], input[type=url]{
 }
 
 #url{
-  width: 40%;
+  width: 50%;
   margin-bottom: 50px;
   padding-left: 40px;
 }

@@ -94,10 +94,11 @@ img.bienvenida{
   display: flex;
   align-self: flex-end;
   margin-right: 70px;
+  padding-top: 30px;
 }
 
 h1.titulo{
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: left;
   size: 2.813rem;
   color: #56BC8C;

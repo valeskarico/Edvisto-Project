@@ -202,6 +202,10 @@ button[type=submit]{
   margin-left: 10px;
 }
 
+.calificaciones{
+  padding-bottom: 40px;
+}
+
 .accordion {
   background-color: #eee;
   color: #444;
@@ -250,4 +254,95 @@ button[type=submit]{
 .active:after {
   content: "\2212";
   color: white;
+}
+
+.footer {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding-top: 30px;
+    font-size: 14px;
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  nav a.menu, .video, .salir{
+    display: none;
+  }
+  
+  nav:hover{
+    width: 100%;
+  }
+  
+  nav a .fa-bars, .fa-film, .fa-sign-in-alt{
+    width: auto;
+  }
+  
+  .logo {
+    width: 50%;
+    display: block;
+  }
+  
+img.bienvenida{
+  width: 80%;
+  align-self: center;
+  margin-right: 0;
+  padding-top: 20px;
+}
+
+.container{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h1.titulo{
+  margin-top: 20px;
+  text-align: center;
+  size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+input[type=text], input[type=email], input[type=url]{
+  width: 80%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 15px;
+  font-size: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+button[type=submit]{
+  border-radius: 15px;
+  font-size: 1rem;
+  padding: 10px 15px;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #D8D8D8;
+}
+
+.texto-footer{
+  text-decoration: none;
+  color: #354760;
+  margin-bottom: 10px;
+  font-size: medium;
+}
+
+.texto-footer:hover{
+  font-weight: 600;
+}
+
 }

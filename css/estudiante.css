@@ -103,7 +103,12 @@ h1.titulo{
   size: 2.813rem;
   color: #56BC8C;
   font-weight: 900 bold;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.titulo.dos{
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 
 .form-container{
@@ -114,7 +119,7 @@ h1.titulo{
 
 p.subtitulo-proceso{
   font-weight: 500;
-  color: #999999;
+  color: #444;
   margin-bottom: 50px;
   font-size: large;
   line-height: 28px;
@@ -326,7 +331,7 @@ button[type=submit]{
 .footer{
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 10px;
   position: fixed;
   left: 0;
   bottom: 0;
@@ -337,8 +342,8 @@ button[type=submit]{
 .texto-footer{
   text-decoration: none;
   color: #354760;
-  margin-bottom: 10px;
   font-size: medium;
+  padding-bottom: 10px;
 }
 
 .texto-footer:hover{

@@ -277,7 +277,7 @@ button[type=submit]{
     border-radius: 0;
   }
 
-  nav a.menu, .video, .salir{
+  nav a.menu, .video, .salir, .notas{
     display: none;
   }
   

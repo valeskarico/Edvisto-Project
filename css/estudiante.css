@@ -39,16 +39,16 @@ nav:hover{
   font-weight: 900;
 }
 
-.video{
-  margin-bottom: 20px;
-}
-
-.video:hover{
+.video:hover, .notas:hover{
   background-color: #354760;
   color: white;
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.salir{
+  margin-top: 40px;
+}
+
 
 .salir:hover{
   background-color: #ff8e51;
@@ -57,7 +57,7 @@ nav:hover{
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-nav a .fa-bars, .fa-film, .fa-sign-in-alt{
+nav a .fa-bars, .fa-film, .fa-sign-in-alt, .fa-medal{
   width: 4rem;
   display: table-cell;
   font-size: 20px;
@@ -215,7 +215,7 @@ button[type=submit]{
   background-color: #eee;
   color: #444;
   cursor: pointer;
-  padding: 18px;
+  padding: 15px;
   width: 90%;
   border: none;
   text-align: left;

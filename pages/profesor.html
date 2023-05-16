@@ -25,15 +25,37 @@
           <span class="fas fa-film"></span>
           <span class="label">Mis Videos</span>
         </a>
-        <a href="#" title="Calificaciones" class="calificaciones">
-          <span class="fa far fa-clipboard"></span>
-          <span class="label">Calificaciones</span>
-        </a>
-        <a href="#" title="Ajustes" class="ajustes">
-          <span class="fa fa-gear"></span>
-          <span class="label">Ajustes</span>
+        <a href="../index.html" class="salir">
+          <span class="fas fa-sign-in-alt"></span>
+          <span class="label">Salir</span>
         </a>
     </nav>
-    <h1 class="titulo">PROFESOR</h1>
+    <label class="email-profesor">EMAIL DEL PROFESOR</label><br>
+    <input type="email" name="email-profesor" id="email-profesor" placeholder="E-mail del profesor" maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
+
+    <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
+    <input type="text" name="nombre-lider" id="nombre-lider" placeholder="Nombre completo del lider" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
+
+    <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
+    <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="Agrega el nombre del proyecto" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
+    
+    <div class="calificaciones" id="cal">
+      <h1 class="titulo dos">CALIFICACIONES</h1>
+
+      <button class="accordion green titulo-proceso">1- PRIMEROS PASOS</button>
+        <div class="panel">
+          <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+        </div>
+        
+        <button class="accordion green titulo-proceso">2- ¡MANOS A LA OBRA!</button>
+        <div class="panel">
+          <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+        </div>
+
+        <button class="accordion green titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
+        <div class="panel">
+          <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+        </div>
+    </div>
   </body>
   </html>

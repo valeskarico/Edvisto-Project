@@ -31,8 +31,8 @@ body{
 
 .logo{
     width: 20%;
-    align-self: flex-end;
-    padding-right: 60px;
+    align-self: flex-start;
+    padding-left: 100px;
 }
 
 .form{
@@ -142,9 +142,7 @@ label{
 
 @media (max-width: 640px) {
     .logo{
-        width: 40%;
-        align-self: center;
-        margin-left: 30px;
+        width: 50%;
     }
 
     .input-email{

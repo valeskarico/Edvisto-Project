@@ -30,32 +30,83 @@
           <span class="label">Salir</span>
         </a>
     </nav>
-    <label class="email-profesor">EMAIL DEL PROFESOR</label><br>
-    <input type="email" name="email-profesor" id="email-profesor" placeholder="E-mail del profesor" maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
-
-    <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
-    <input type="text" name="nombre-lider" id="nombre-lider" placeholder="Nombre completo del lider" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
-
-    <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
-    <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="Agrega el nombre del proyecto" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
-    
-    <div class="calificaciones" id="cal">
-      <h1 class="titulo dos">CALIFICACIONES</h1>
-
-      <button class="accordion green titulo-proceso">1- PRIMEROS PASOS</button>
-        <div class="panel">
-          <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+    <div class="container">
+      
+      <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">SELECCIONAR EMAIL DEL ALUMNO</button><i class="fa-solid fa-circle-chevron-down" onclick="myFunction()"></i>
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" placeholder="Buscar..." id="myInput" onkeyup="filterFunction()">
+          <a href="#">ALUMNO1@EMAIL.COM</a>
+          <a href="#">ALUMNO2@EMAIL.COM</a>
+          <a href="#">ALUMNO3@EMAIL.COM</a>
+          <a href="#">ALUMNO4@EMAIL.COM</a>
         </div>
-        
-        <button class="accordion green titulo-proceso">2- ¡MANOS A LA OBRA!</button>
-        <div class="panel">
-          <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
-        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
+        <input type="text" name="nombre-lider" id="nombre-lider" placeholder="ALUMNO ALUMNO" disabled><br>
 
-        <button class="accordion green titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
-        <div class="panel">
-          <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+        <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
+        <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="LA HUERTA" disabled><br>
+      </div>  
+        <div class="calificaciones" id="cal">
+          <h1 class="titulo dos">EVALUAR PROYECTO</h1>
+
+          <button class="accordion green titulo-proceso">1- PRIMEROS PASOS</button>
+            <div class="panel">
+              <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+            </div>
+            
+            <button class="accordion green titulo-proceso">2- ¡MANOS A LA OBRA!</button>
+            <div class="panel">
+              <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+            </div>
+
+            <button class="accordion green titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
+            <div class="panel">
+              <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+            </div>
         </div>
     </div>
+    <div class="footer">
+      <a href="../index.html" class="texto-footer">Salir</a>
+    </div>
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+      }
+      
+      function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+          txtValue = a[i].textContent || a[i].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+          } else {
+            a[i].style.display = "none";
+          }
+        }
+      }
+
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
+      }
+    </script>
   </body>
   </html>

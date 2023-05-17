@@ -168,6 +168,10 @@ input#titulo-proyecto{
   margin-bottom: 30px;
 }
 
+input#email-lider{
+  margin-left: 20px;
+}
+
 .guardar{
   float: right;
   margin-right: 110px;
@@ -186,7 +190,7 @@ input[type=text], input[type=email], input[type=url]{
 }
 
 #url{
-  width: 50%;
+  width: 70%;
   margin-bottom: 50px;
   padding-left: 40px;
 }
@@ -244,7 +248,7 @@ button[type=submit]{
   overflow: hidden;
   border: 1px solid black;
   border-radius: 18px;
-  width: 85%;
+  width: 86%;
   margin-bottom: 20px;
 }
 

@@ -335,6 +335,34 @@ button[type=submit]{
 
 .show {display: block;}
 
+.subtitulo-proceso{
+  font-weight: 500;
+  color: #444;
+  font-size: large;
+  line-height: 28px;
+}
+
+.fa-exclamation-circle{
+  color: #354760;
+}
+
+.link-youtube{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 40px;
+}
+
+.yt-link{
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+.redireccion{
+  margin-left: 80px;
+  font-size: larger;
+  color: #354760;
+}
+
 /*PROFESOR*/
 
 @media only screen and (max-width: 600px) {

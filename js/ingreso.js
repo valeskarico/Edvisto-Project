@@ -33,26 +33,37 @@ formulario.addEventListener('submit', (event) => {
   } else if (email === 'profesor@email.com') {
 
     if (rolInputs[0].checked) {
-      //alert('Bienvenido Profesor');
+
     } else if (rolInputs[1].checked) {
-      alert('El correo electrónico ingresado solo se permite para el rol de profesor');
+      Swal.fire({
+        title: 'El correo electrónico ingresado no corresponde al rol',
+        confirmButtonColor: '#354760',
+      })
     } else {
-      alert('Seleccione un rol de usuario');
+      Swal.fire({
+        title: 'Seleccione un rol de usuario',
+        confirmButtonColor: '#354760',
+      })
     }
 
   } else if (email === 'estudiante@email.com') {
     if (rolInputs[1].checked) {
-      //alert('Bienvenido Estudiante');
+
     } else if (rolInputs[0].checked) {
-      alert('El correo electrónico ingresado solo se permite para el rol de estudiante');
+      Swal.fire({
+        title: 'El correo electrónico ingresado no corresponde al rol',
+        confirmButtonColor: '#354760',
+      })
     } else {   
-      alert('Seleccione un rol de usuario');
+      Swal.fire({
+        title: 'Seleccione un rol de usuario',
+        confirmButtonColor: '#354760',
+      })
     }
   } else {
     Swal.fire({
       imageUrl: 'img/no-registrado.png',
       confirmButtonColor: '#354760',
     })
-    //alert('Lo siento, su correo no esta en nuestra base de datos');
   }
 });

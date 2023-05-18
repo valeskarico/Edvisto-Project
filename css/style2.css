@@ -342,6 +342,10 @@ button[type=submit]{
   line-height: 28px;
 }
 
+p.info-mobile{
+  display: none;
+}
+
 .fa-exclamation-circle{
   color: #354760;
 }
@@ -492,6 +496,17 @@ button[type=submit]{
 
 .textareas{
   padding-left: initial;
+}
+
+p.text-mobile{
+  display: none;
+}
+
+p.info-mobile{
+  display: block;
+  padding-left: 2px;
+  padding-top: 5px;
+  font-size: small;
 }
 
 }

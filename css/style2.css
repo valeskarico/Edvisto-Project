@@ -401,7 +401,48 @@ p.info-mobile{
   margin-left: 2px;
   padding-right: 20px;
   font-size: large;
-} 
+}
+
+.box-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.titulo-cal{
+  font-weight: normal;
+  text-align: left;
+}
+
+input[type=button]{
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-size: medium;
+  text-align: justify;
+  padding: 7px 17px;
+  cursor: pointer;
+  float: right;
+}
+
+.button-aprobado{
+  background-color: #ff8e51;
+  color: white;
+}
+
+.button-desaprobado {
+  background-color: #354760;
+  color: white;
+}
+
+.info-text{
+  margin-top: 40px;
+  font-weight: 500;
+  color: #444;
+  font-size: large;
+  line-height: 28px;
+  margin-bottom: 40px;
+}
 
 /*PROFESOR*/
 
@@ -507,6 +548,16 @@ p.info-mobile{
   padding-left: 2px;
   padding-top: 5px;
   font-size: small;
+}
+
+.box-button {
+  flex-direction: column;
+  align-items: flex-start;
+}
+  
+.button-aprobado, .button-desaprobado {
+  float: none;
+  margin-top: 10px;
 }
 
 }

@@ -359,14 +359,14 @@ button[type=submit]{
 
 .redireccion{
   margin-left: 80px;
-  font-size: larger;
+  font-size: 20px;
   color: #354760;
 }
 
 .box-textarea {
+  box-sizing: border-box;
   max-width: 800px;
   margin: 0 auto;
-  /*padding: 20px;*/
   padding-top: 50px;
 }
 
@@ -374,8 +374,8 @@ button[type=submit]{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-left: 50px;
   margin-bottom: 20px;
+  padding-left: 50px;
 }
 
 .textarea {
@@ -488,6 +488,10 @@ button[type=submit]{
 
 .textarea {
   flex-basis: 100%;
+}
+
+.textareas{
+  padding-left: 30px;
 }
 
 }

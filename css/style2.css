@@ -45,10 +45,10 @@ nav:hover{
   border: 1px solid #000000;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
 .salir{
   margin-top: 40px;
 }
-
 
 .salir:hover{
   background-color: #ff8e51;
@@ -363,6 +363,42 @@ button[type=submit]{
   color: #354760;
 }
 
+.box-textarea {
+  max-width: 800px;
+  margin: 0 auto;
+  /*padding: 20px;*/
+  padding-top: 50px;
+}
+
+.textareas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 50px;
+  margin-bottom: 20px;
+}
+
+.textarea {
+  flex-basis: 48%;
+  margin-bottom: 10px;
+}
+
+.textarea textarea {
+  resize: none;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  font-size: medium;
+}
+
+.pensamiento, .creatividad, .comunicacion, .colaboracion{
+  position: relative;
+  margin-left: 2px;
+  padding-right: 20px;
+  font-size: large;
+} 
+
 /*PROFESOR*/
 
 @media only screen and (max-width: 600px) {
@@ -448,6 +484,10 @@ button[type=submit]{
 
 .texto-footer:hover{
   font-weight: 600;
+}
+
+.textarea {
+  flex-basis: 100%;
 }
 
 }

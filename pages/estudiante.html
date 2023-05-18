@@ -159,25 +159,30 @@
   });
 
   document.addEventListener("DOMContentLoaded", function() {
-  var submitButton = document.querySelector(".submit-button.listo");
-  var urlInput = document.getElementById("url");
+  var accordionButtons = document.querySelectorAll(".accordion");
   
-  submitButton.addEventListener("click", function() {
-    var urlValue = urlInput.value.trim();
+  accordionButtons.forEach(function(button) {
+    var submitButton = button.nextElementSibling.querySelector(".submit-button.listo");
+    var urlInput = button.nextElementSibling.querySelector("#url");
     
-    if (urlValue === "") {
-      alert("Debe pegar el link de YouTube");
-    } else {
-      var confirmation = confirm("Estás por enviar el link junto con su información. No podrá editarse nuevamente. ¿Deseas continuar?");
+    submitButton.addEventListener("click", function() {
+      var urlValue = urlInput.value.trim();
       
-      if (confirmation) {
-        alert("¡Felicidades, ya subiste tu video! Se lo enviamos a tu profesor para que pueda evaluarlo");
-        urlInput.disabled = true;
-        submitButton.disabled = true;
+      if (urlValue === "") {
+        alert("Debe pegar el link de YouTube");
+      } else {
+        var confirmation = confirm("Estás por enviar el link junto con su información. No podrá editarse nuevamente. ¿Deseas continuar?");
+        
+        if (confirmation) {
+          alert("¡Felicidades, ya subiste tu video! Se lo enviamos a tu profesor para que pueda evaluarlo");
+          urlInput.disabled = true;
+          submitButton.disabled = true;
+        }
       }
-    }
+    });
   });
 });
+
 </script>
 </body>
 </html>

@@ -132,6 +132,52 @@
       }
     });
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var form = document.forms['formulario'];
+    var guardarButton = form.querySelector('.guardar');
+
+    guardarButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Evitar que el formulario se envíe
+
+      var inputs = form.querySelectorAll('input');
+      var completo = true;
+
+      inputs.forEach(function(input) {
+        if (input.value.trim() === '') {
+          completo = false;
+          return;
+        }
+      });
+
+      if (completo) {
+        alert('Sus datos han sido guardados.');
+      } else {
+        alert('Por favor completar todos los campos.');
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+  var submitButton = document.querySelector(".submit-button.listo");
+  var urlInput = document.getElementById("url");
+  
+  submitButton.addEventListener("click", function() {
+    var urlValue = urlInput.value.trim();
+    
+    if (urlValue === "") {
+      alert("Debe pegar el link de YouTube");
+    } else {
+      var confirmation = confirm("Estás por enviar el link junto con su información. No podrá editarse nuevamente. ¿Deseas continuar?");
+      
+      if (confirmation) {
+        alert("¡Felicidades, ya subiste tu video! Se lo enviamos a tu profesor para que pueda evaluarlo");
+        urlInput.disabled = true;
+        submitButton.disabled = true;
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>

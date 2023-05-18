@@ -491,7 +491,7 @@ button[type=submit]{
 }
 
 .textareas{
-  padding-left: 30px;
+  padding-left: initial;
 }
 
 }

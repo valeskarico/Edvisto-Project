@@ -3,13 +3,15 @@ function validarAcceso() {
   var rol = document.querySelector('input[name="rol"]:checked').value;
 
   if (email === "profesor@email.com" && rol === "teacher") {
+    localStorage.setItem("emailProfesor", email);
     window.location.href = "./pages/profesor.html";
   } else if (email === "estudiante@email.com" && rol === "student") {
+    localStorage.setItem("emailEstudiante", email);
     window.location.href = "./pages/estudiante.html";
-  } else {
-    event.preventDefault();
   }
+  return false;
 }
+
 const emailInput = document.getElementById('email');
 const rolInputs = document.getElementsByName('rol');
 

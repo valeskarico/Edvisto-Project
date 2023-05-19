@@ -35,7 +35,7 @@
     </a>
   </nav>
   <div class="container">
-    <p class="email-ingreso"><span id="email">estudiante@email.com</span></p>
+    <p class="email-ingreso"><span id="emailEstudiante"></span></p>
     <img src="../img/Bienvenida.png" alt="mensaje de bienvenida" class="bienvenida">
     <h1 class="titulo uno">CARGAR PROYECTO</h1>
     
@@ -118,6 +118,14 @@
       <a href="../index.html" class="texto-footer">Salir</a>
     </div>
 <script>
+
+  // Obtener el correo electrónico migrado de localStorage
+  var emailEstudiante = localStorage.getItem("emailEstudiante");
+
+  // Mostrar el correo electrónico en el elemento con el ID "emailEstudiante"
+  document.getElementById("emailEstudiante").textContent = emailEstudiante;
+  //
+
   var acc = document.getElementsByClassName("accordion");
   var i;
 

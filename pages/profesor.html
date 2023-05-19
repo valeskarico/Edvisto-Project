@@ -31,7 +31,7 @@
         </a>
     </nav>
     <div class="container">
-      
+      <p class="email-ingreso"><span id="emailProfesor"></span></p>
       <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">SELECCIONAR EMAIL DEL ALUMNO</button><i class="fa-solid fa-circle-chevron-down" onclick="myFunction()"></i>
         <div id="myDropdown" class="dropdown-content">
@@ -236,6 +236,14 @@
       <a href="../index.html" class="texto-footer">Salir</a>
     </div>
     <script>
+
+        // Obtener el correo electrónico migrado de localStorage
+      var emailProfesor = localStorage.getItem("emailProfesor");
+
+      // Mostrar el correo electrónico en el elemento con el ID "emailEstudiante"
+      document.getElementById("emailProfesor").textContent = emailProfesor;
+      //
+      
       function myFunction() {
         document.getElementById("myDropdown").classList.toggle("show");
       }

@@ -105,7 +105,6 @@ h1.titulo{
 }
 
 .titulo.dos{
-  padding-top: 30px;
   padding-bottom: 50px;
 }
 
@@ -265,7 +264,7 @@ button[type=submit]{
   background-color: #354760;
   color: white;
   padding: 16px;
-  padding-right: 40px;
+  padding-right: 150px;
   font-size: 16px;
   border: 1px solid black;
   border-radius: 18px;
@@ -279,11 +278,11 @@ button[type=submit]{
 
 #myInput {
   box-sizing: border-box;
-  border: none;
+  border: 1px solid black;
   width: 100%;
 }
 
-#myInput:focus {outline: 3px solid #ddd;}
+#myInput:focus {outline: 1px solid black;}*/
 
 .dropdown {
   position: relative;
@@ -294,7 +293,7 @@ button[type=submit]{
   display: none;
   position: absolute;
   background-color: #f6f6f6;
-  min-width: 320px;
+  min-width: 430px;
   overflow: auto;
   border: 1px solid #ddd;
   z-index: 1;
@@ -539,6 +538,18 @@ p.info-mobile{
   padding-left: 2px;
   padding-top: 5px;
   font-size: small;
+}
+
+.dropbtn{
+  padding-right: 50px;
+}
+
+.dropdown-content{
+  min-width: 330px;
+}
+
+#myInput{
+  width: 95%;
 }
 
 .box-button {

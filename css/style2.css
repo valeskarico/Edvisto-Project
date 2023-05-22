@@ -485,7 +485,7 @@ h1.titulo{
 }
 
 input[type=text], input[type=email], input[type=url]{
-  width: 80%;
+  width: 82%;
   padding: 10px 15px;
   margin: 10px 0;
   border-radius: 15px;
@@ -557,7 +557,7 @@ p.info-mobile{
 
 .panel{
   margin-left: 10px;
-  width: 80%;
+  width: 82%;
 }
 
 .fa-link{

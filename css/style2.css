@@ -89,15 +89,14 @@ p.email-ingreso{
 }
 
 img.bienvenida{
-  width: 400px;
+  width: 500px;
   display: flex;
-  align-self: flex-end;
-  margin-right: 70px;
+  align-self: center;
   padding-top: 30px;
 }
 
 h1.titulo{
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: left;
   size: 2.813rem;
   color: #56BC8C;
@@ -154,21 +153,8 @@ label{
   background: white;
 }
 
-input#nombre-lider{
-  margin-left: 20px;
-}
-
-input#email-profesor{
-  margin-left: 20px;
-}
-
 input#titulo-proyecto{
-  margin-left: 20px;
-  margin-bottom: 30px;
-}
-
-input#email-lider{
-  margin-left: 20px;
+  margin-bottom: 50px;
 }
 
 .guardar{
@@ -178,7 +164,7 @@ input#email-lider{
 }
 
 input[type=text], input[type=email], input[type=url]{
-  width: 80%;
+  width: 82%;
   padding: 12px 20px;
   margin: 10px 0;
   border: 1px solid #000;

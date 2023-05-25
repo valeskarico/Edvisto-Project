@@ -101,11 +101,16 @@ h1.titulo{
   size: 2.813rem;
   color: #56BC8C;
   font-weight: 900 bold;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.subtitulo-titulo{
+  padding-bottom: 30px;
+  font-size: large;
 }
 
 .titulo.dos{
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 }
 
 .form-container{

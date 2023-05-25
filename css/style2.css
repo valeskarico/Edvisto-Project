@@ -488,6 +488,13 @@ h1.titulo{
   margin-bottom: 10px;
 }
 
+.subtitulo-titulo{
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+
 input[type=text], input[type=email], input[type=url]{
   width: 82%;
   padding: 10px 15px;
@@ -498,7 +505,7 @@ input[type=text], input[type=email], input[type=url]{
   margin-left: 10px;
 }
 
-button[type=submit]{
+button[type=submit], button[type=button]{
   border-radius: 15px;
   font-size: 1rem;
   padding: 10px 15px;

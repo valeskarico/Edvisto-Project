@@ -40,7 +40,7 @@
     <h1 class="titulo uno">CARGAR PROYECTO</h1>
     
     <div class="form-container">
-      <form name="formulario" class="informacion" action="">
+      <form name="formulario-proyecto" class="informacion">
         <div class="form-group">
 
           <label class="email-profesor">EMAIL DEL PROFESOR</label><br>
@@ -50,12 +50,12 @@
           <input type="text" name="nombre-lider" id="nombre-lider" placeholder="NOMBRE COMPLETO DEL LÍDER" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
 
           <label class="email-lider">EMAIL DEL LIDER</label><br>
-          <input type="email" name="email-lider" id="email-lider" placeholder="E-MAIL DEL LÍDER DEL PROYECTO" maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
+          <input type="email" name="email-lider" id="email-estudiante" placeholder="E-MAIL DEL LÍDER DEL PROYECTO" maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
           
           <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
           <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="AGREGA EL NOMBRE DEL PROYECTO" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
 
-          <button type="submit" class="submit-button guardar"><i class='fas fa-download'></i> GUARDAR</button>
+          <button type="button" id="project-create" class="submit-button guardar"><i class='fas fa-download'></i> GUARDAR</button>
         </div>
       </form>
 
@@ -66,8 +66,8 @@
          <div class="form-url">
              <i class="fa-brands fa-youtube"></i>
              <i class="fas fa-link"></i>
-             <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
-             <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+             <input type="url" id="url-1" name="url" placeholder="Pegar link de Youtube">
+             <button type="button" id="video-1" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
          </div>
       </div>
       
@@ -78,8 +78,8 @@
          <div class="form-url">
              <i class="fa-brands fa-youtube"></i>
              <i class="fas fa-link"></i>
-             <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
-             <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+             <input type="url" id="url-2" name="url" placeholder="Pegar link de Youtube">
+             <button type="button" id="video-2" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
          </div>
       </div>
 
@@ -90,8 +90,8 @@
          <div class="form-url">
              <i class="fa-brands fa-youtube"></i>
              <i class="fas fa-link"></i>
-             <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
-             <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+             <input type="url" id="url-3" name="url" placeholder="Pegar link de Youtube">
+             <button type="button" id="video-3" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
          </div>
       </div>
 
@@ -117,7 +117,53 @@
     <div class="footer">
       <a href="../index.html" class="texto-footer">Salir</a>
     </div>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+
+const baseURl = 'https://team-fusion-backend-pr-8.onrender.com';
+
+document.addEventListener('DOMContentLoaded', function () {
+  const projectForm = document.getElementById('project-create');
+  projectForm.addEventListener('click', projectCreate);
+
+  const videoSubido1 = document.getElementById('video-1');
+  videoSubido1.addEventListener('click', video1);
+
+  const videoSubido2 = document.getElementById('video-2');
+  videoSubido2.addEventListener('click', video2);
+
+  const videoSubido3 = document.getElementById('video-3');
+  videoSubido3.addEventListener('click', video3);
+});
+
+function projectCreate(event) {
+  event.preventDefault(); // Evitar que el formulario se envíe por defecto
+
+  console.log("hola")
+  const emailStudent = document.getElementById('email-estudiante').value;
+  const emailTeacher = document.getElementById('email-profesor').value;
+  const projectTitle = document.getElementById('titulo-proyecto').value;
+
+  axios.post(
+    `${baseURl}/projects/`,
+    {
+      "studentEmail": emailStudent,
+      "teacherEmail": emailTeacher,
+      "title": projectTitle,
+    }
+  ).then((response) => {
+    localStorage.setItem('project', JSON.stringify(response.data));
+    
+  }).catch(() => {
+    Swal.fire({
+      text: 'Asegúrese de que el email se encuentre registrado y que el rol seleccionado es el correcto',
+      confirmButtonColor: '#354760',
+    });
+  });
+}
+
+
 
   // Obtener el correo electrónico migrado de localStorage
   var emailEstudiante = localStorage.getItem("emailEstudiante");
@@ -141,7 +187,7 @@
     });
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
+  /*document.addEventListener('DOMContentLoaded', function() {
     var form = document.forms['formulario'];
     var guardarButton = form.querySelector('.guardar');
 
@@ -164,7 +210,7 @@
         alert('Por favor completar todos los campos.');
       }
     });
-  });
+  });*/
 
   document.addEventListener("DOMContentLoaded", function() {
   var accordionButtons = document.querySelectorAll(".accordion");

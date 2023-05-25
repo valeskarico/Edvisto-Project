@@ -165,7 +165,30 @@ function projectCreate(event) {
   });
 }
 
+function projectCreate(event) {
+  event.preventDefault(); // Evitar que el formulario se envíe por defecto
 
+  console.log("hola2")
+  const url1 = document.getElementById('url-1').value;
+  const url2 = document.getElementById('url-2').value;
+  const url3 = document.getElementById('url-3').value;
+
+  axios.post(
+    `${baseURl}/projects/{646f77b3eaa3619480e8ecb1}`,
+    {
+      "link": url1,
+      "order": 0
+    }
+  ).then((response) => {
+    console.log("ok")
+    
+  }).catch(() => {
+    Swal.fire({
+      text: 'Asegúrese de que el email se encuentre registrado y que el rol seleccionado es el correcto',
+      confirmButtonColor: '#354760',
+    });
+  });
+}
 
   // Obtener el correo electrónico migrado de localStorage
   var emailEstudiante = localStorage.getItem("emailEstudiante");

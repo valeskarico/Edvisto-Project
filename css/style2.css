@@ -178,7 +178,7 @@ input[type=text], input[type=email], input[type=url]{
   padding-left: 50px;
 }
 
-#url{
+#url-1, #url-2, #url-3{
   width: 70%;
   margin-bottom: 50px;
   padding-left: 40px;

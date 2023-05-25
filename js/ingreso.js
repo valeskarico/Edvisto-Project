@@ -1,3 +1,39 @@
+const baseURl = 'https://team-fusion-backend-pr-8.onrender.com';
+
+function getFormData(form) {
+  const formData = new FormData(form);
+  return Object.fromEntries(formData);
+}
+
+function redirectAfterLogin(rol) {
+  if (rol === 'teacher') {
+    return window.location.href = 'pages/profesor.html';
+  }
+  return window.location.href = 'pages/estudiante.html';
+}
+
+function login(e) {
+  e.preventDefault();
+  axios.post(
+    `${baseURl}/auth/login`,
+    getFormData(e.target),
+  ).then((response) => {
+    localStorage.setItem('user', JSON.stringify(response.data));
+    redirectAfterLogin(response.data.rol);
+  }).catch(() => {
+    Swal.fire({
+      title: 'Usuario no encontrado',
+      text: 'Asegurese que el email se encuentra registrado y que el rol seleccionado es el correcto',
+      confirmButtonColor: '#354760',
+    })
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const loginForm = document.getElementById('login');
+  loginForm.addEventListener('submit', login);
+});
+/*
 function validarAcceso() {
   var email = document.getElementById("email").value;
   var rol = document.querySelector('input[name="rol"]:checked').value;
@@ -69,3 +105,4 @@ formulario.addEventListener('submit', (event) => {
     })
   }
 });
+*/

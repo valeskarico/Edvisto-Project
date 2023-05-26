@@ -1,64 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="sweetalert2.min.css">
-    <title>EdVisto</title>
-    <link rel="shortcut icon" href="./img/Group-61.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sweetalert2.min.css">
+  <title>Ingreso</title>
+  <link rel="shortcut icon" href="./img/Group-61.ico" type="image/x-icon">
 </head>
+
 <body>
-    <div class="form-container">
-        <img src="./img/edvisto-logo.png.webp" alt="logo" class="logo">
-        
-        <form name="formulario" class="form" id="login" onsubmit="return validarAcceso();">
+  <div class="form-container">
+    <img src="./img/edvisto-logo.png.webp" alt="logo" class="logo">
 
-          <h1 class="titulo">Correo Electrónico</h1>
-          <input type="email" name="email" id="email" placeholder="EJEMPLO@EMAIL.COM" class="input-email" maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
+    <form name="formulario" class="form" id="login" onsubmit="return validarAcceso();">
 
-          <label class="profesor">
-            Soy Profesor
-            <input type="radio" name="rol" value="teacher">
-            <span class="checkmark one"></span>
-          </label><br>
+      <h1 class="titulo">Correo Electrónico</h1>
+      <input type="email" name="email" id="email" placeholder="EJEMPLO@EMAIL.COM" class="input-email"
+        maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
 
-          <label class="estudiante">
-            Soy Estudiante
-            <input type="radio" name="rol" value="student">
-            <span class="checkmark two"></span>
-          </label><br>
+      <label class="profesor">
+        Soy Profesor
+        <input type="radio" name="rol" value="teacher">
+        <span class="checkmark one"></span>
+      </label><br>
 
-          <input type="submit" value="INGRESAR" class="ingreso-button">
-  
-        </form>
-    <script src="./js/ingreso.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-      function validarAcceso() {
-        // Obtener el valor del correo electrónico ingresado
-        var email = document.getElementById("email").value;
-  
-        // Obtener el valor del rol seleccionado
-        var rol = document.querySelector('input[name="rol"]:checked').value;
-  
-        // Guardar el correo electrónico en el localStorage dependiendo del rol
-        if (rol === "student") {
-          localStorage.setItem("emailEstudiante", email);
-          window.location.href = "pages/estudiante.html";
-        } else if (rol === "teacher") {
-          localStorage.setItem("emailProfesor", email);
-          window.location.href = "pages/profesor.html";
-        }
-  
-        // Evitar que se envíe el formulario y se recargue la página
-        return false;
-      }
-    </script>
+      <label class="estudiante">
+        Soy Estudiante
+        <input type="radio" name="rol" value="student">
+        <span class="checkmark two"></span>
+      </label><br>
+
+      <input type="submit" value="INGRESAR" class="ingreso-button">
+
+    </form>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/ingreso.js"></script>
+  <script>
+    function validarAcceso() {
+      // Obtener el valor del correo electrónico ingresado
+      var email = document.getElementById("email").value;
+
+      // Obtener el valor del rol seleccionado
+      var rol = document.querySelector('input[name="rol"]:checked').value;
+
+      // Guardar el correo electrónico en el localStorage dependiendo del rol
+      if (rol === "student") {
+        localStorage.setItem("emailEstudiante", email);
+      } else if (rol === "teacher") {
+        localStorage.setItem("emailProfesor", email);
+            }
+
+      // Evitar que se envíe el formulario y se recargue la página
+      return false;
+    }
+  </script>
 </body>
 </html>

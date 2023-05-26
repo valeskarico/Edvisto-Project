@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cargar Proyecto</title>
-    <link rel="shortcut icon" href="../img/Group-61.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
-    <link rel="stylesheet" href="../css/style2.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargar Proyecto</title>
+  <link rel="shortcut icon" href="../img/Group-61.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <nav>
     <a href="#" title="EdVisto">
@@ -29,7 +31,7 @@
       <span class="fas fa-medal"></span>
       <span class="label">Calificaciones</span>
     </a>
-    <a href="../index.html" class="salir">
+    <a class="salir" href="#" onClick="localStorage.removeItem('user'); window.location.href = '/index.html'">
       <span class="fas fa-sign-in-alt"></span>
       <span class="label">Salir</span>
     </a>
@@ -39,61 +41,71 @@
     <img src="../img/Group-2319.png" alt="mensaje de bienvenida" class="bienvenida">
     <h1 class="titulo uno">CARGAR PROYECTO</h1>
     <p class="subtitulo-titulo">Completa con los datos para que la información llegue a tu profesor.</p>
-    
+
     <div class="form-container">
-      <form name="formulario-proyecto" class="informacion">
-        <div class="form-group">
+      <form name="formulario" class="informacion" action="">
+        <fieldset>
+          <div class="form-group">
 
-          <label class="email-profesor">EMAIL DEL PROFESOR</label><br>
-          <input type="email" name="email-profesor" id="email-profesor" placeholder="E-MAIL DEL PROFESOR" maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
+            <label class="email-profesor">EMAIL DEL PROFESOR</label><br>
+            <input type="email" name="email-profesor" id="email-profesor" placeholder="E-MAIL DEL PROFESOR"
+              maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
 
-          <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
-          <input type="text" name="nombre-lider" id="nombre-lider" placeholder="NOMBRE COMPLETO DEL LÍDER" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
+            <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
+            <input type="text" name="nombre-lider" id="nombre-lider" placeholder="NOMBRE COMPLETO DEL LÍDER"
+              maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
 
-          <label class="email-lider">EMAIL DEL LIDER</label><br>
-          <input type="email" name="email-lider" id="email-estudiante" placeholder="E-MAIL DEL LÍDER DEL PROYECTO" maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
-          
-          <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
-          <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="AGREGA EL NOMBRE DEL PROYECTO" maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
+            <label class="email-lider">EMAIL DEL LIDER</label><br>
+            <input type="email" name="email-lider" id="email-lider" placeholder="E-MAIL DEL LÍDER DEL PROYECTO"
+              maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
 
-          <button type="button" id="project-create" class="submit-button guardar"><i class='fas fa-download'></i> GUARDAR</button>
-        </div>
+            <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
+            <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="AGREGA EL NOMBRE DEL PROYECTO"
+              maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
+
+            <button type="submit" class="submit-button guardar"><i class='fas fa-download'></i> GUARDAR</button>
+          </div>
+        </fieldset>
       </form>
 
       <button id="vid" class="accordion blue titulo-proceso">1- PRIMEROS PASOS</button>
       <div class="panel">
-         <p class="subtitulo-proceso">En este video, el grupo se presenta, y comienza su camino. Pueden contar sus propuestas y expectativas. No duden en consultar con su docente.</p>
- 
-         <div class="form-url">
-             <i class="fa-brands fa-youtube"></i>
-             <i class="fas fa-link"></i>
-             <input type="url" id="url-1" name="url" placeholder="Pegar link de Youtube">
-             <button type="button" id="video-1" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
-         </div>
+        <p class="subtitulo-proceso">En este video, el grupo se presenta, y comienza su camino. Pueden contar sus
+          propuestas y expectativas. No duden en consultar con su docente.</p>
+
+        <div class="form-url">
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fas fa-link"></i>
+          <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
+          <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+        </div>
       </div>
-      
+
       <button class="accordion blue titulo-proceso">2- ¡MANOS A LA OBRA!</button>
       <div class="panel">
-         <p class="subtitulo-proceso">Es momento de llevar a la práctica nuestras ideas, documentando cada paso ¡A experimentar! Acerquen sus inquietudes al docente.</p>
- 
-         <div class="form-url">
-             <i class="fa-brands fa-youtube"></i>
-             <i class="fas fa-link"></i>
-             <input type="url" id="url-2" name="url" placeholder="Pegar link de Youtube">
-             <button type="button" id="video-2" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
-         </div>
+        <p class="subtitulo-proceso">Es momento de llevar a la práctica nuestras ideas, documentando cada paso ¡A
+          experimentar! Acerquen sus inquietudes al docente.</p>
+
+        <div class="form-url">
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fas fa-link"></i>
+          <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
+          <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+        </div>
       </div>
 
       <button class="accordion blue titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
       <div class="panel">
-         <p class="subtitulo-proceso">Repasando las tareas anteriores, como grupo pueden comentar sus reflexiones, opiniones y conclusiones. No olviden conversar sobre su trabajo en equipo, los obstáculos y qué les pareció la actividad. Compartan con el docente cualquier pregunta que tengan.</p>
- 
-         <div class="form-url">
-             <i class="fa-brands fa-youtube"></i>
-             <i class="fas fa-link"></i>
-             <input type="url" id="url-3" name="url" placeholder="Pegar link de Youtube">
-             <button type="button" id="video-3" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
-         </div>
+        <p class="subtitulo-proceso">Repasando las tareas anteriores, como grupo pueden comentar sus reflexiones,
+          opiniones y conclusiones. No olviden conversar sobre su trabajo en equipo, los obstáculos y qué les pareció la
+          actividad. Compartan con el docente cualquier pregunta que tengan.</p>
+
+        <div class="form-url">
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fas fa-link"></i>
+          <input type="url" id="url" name="url" placeholder="Pegar link de Youtube">
+          <button type="submit" class="submit-button listo"><i class='far fa-paper-plane'></i> ¡LISTO!</button>
+        </div>
       </div>
 
       <div class="calificaciones" id="cal">
@@ -101,167 +113,117 @@
         <p class="subtitulo-titulo">Aquí encontrarás las notas que realice tu profesor al evaluar los videos enviados.</p>
 
         <button class="accordion green titulo-proceso">1- PRIMEROS PASOS</button>
-          <div class="panel">
-            <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
-          </div>
-          
-          <button class="accordion green titulo-proceso">2- ¡MANOS A LA OBRA!</button>
-          <div class="panel">
-            <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
-          </div>
+        <div class="panel" id="cal-1">
+          <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+        </div>
 
-          <button class="accordion green titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
-          <div class="panel">
-            <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
-          </div>
+        <button class="accordion green titulo-proceso">2- ¡MANOS A LA OBRA!</button>
+        <div class="panel">
+          <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+        </div>
+
+        <button class="accordion green titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
+        <div class="panel">
+          <p class="subtitulo-proceso">TODAVÍA NO HAY CALIFICACIONES PARA MOSTRAR</p>
+        </div>
       </div>
-  </div>
+    </div>
     <div class="footer">
       <a href="../index.html" class="texto-footer">Salir</a>
     </div>
-<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
+    <script>
 
-const baseURl = 'https://team-fusion-backend-pr-8.onrender.com';
+      // Obtener el correo electrónico migrado de localStorage
+      var emailEstudiante = localStorage.getItem("emailEstudiante");
 
-document.addEventListener('DOMContentLoaded', function () {
-  const projectForm = document.getElementById('project-create');
-  projectForm.addEventListener('click', projectCreate);
+      // Mostrar el correo electrónico en el elemento con el ID "emailEstudiante"
+      document.getElementById("emailEstudiante").textContent = emailEstudiante;
+      //
 
-  const videoSubido1 = document.getElementById('video-1');
-  videoSubido1.addEventListener('click', video1);
+      var acc = document.getElementsByClassName("accordion");
+      var i;
 
-  const videoSubido2 = document.getElementById('video-2');
-  videoSubido2.addEventListener('click', video2);
-
-  const videoSubido3 = document.getElementById('video-3');
-  videoSubido3.addEventListener('click', video3);
-});
-
-function projectCreate(event) {
-  event.preventDefault(); // Evitar que el formulario se envíe por defecto
-
-  console.log("hola")
-  const emailStudent = document.getElementById('email-estudiante').value;
-  const emailTeacher = document.getElementById('email-profesor').value;
-  const projectTitle = document.getElementById('titulo-proyecto').value;
-
-  axios.post(
-    `${baseURl}/projects/`,
-    {
-      "studentEmail": emailStudent,
-      "teacherEmail": emailTeacher,
-      "title": projectTitle,
-    }
-  ).then((response) => {
-    localStorage.setItem('project', JSON.stringify(response.data));
-    
-  }).catch(() => {
-    Swal.fire({
-      text: 'Asegúrese de que el email se encuentre registrado y que el rol seleccionado es el correcto',
-      confirmButtonColor: '#354760',
-    });
-  });
-}
-
-function projectCreate(event) {
-  event.preventDefault(); // Evitar que el formulario se envíe por defecto
-
-  console.log("hola2")
-  const url1 = document.getElementById('url-1').value;
-  const url2 = document.getElementById('url-2').value;
-  const url3 = document.getElementById('url-3').value;
-
-  axios.post(
-    `${baseURl}/projects/{646f77b3eaa3619480e8ecb1}`,
-    {
-      "link": url1,
-      "order": 0
-    }
-  ).then((response) => {
-    console.log("ok")
-    
-  }).catch(() => {
-    Swal.fire({
-      text: 'Asegúrese de que el email se encuentre registrado y que el rol seleccionado es el correcto',
-      confirmButtonColor: '#354760',
-    });
-  });
-}
-
-  // Obtener el correo electrónico migrado de localStorage
-  var emailEstudiante = localStorage.getItem("emailEstudiante");
-
-  // Mostrar el correo electrónico en el elemento con el ID "emailEstudiante"
-  document.getElementById("emailEstudiante").textContent = emailEstudiante;
-  //
-
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.display === "block") {
+            panel.style.display = "none";
+          } else {
+            panel.style.display = "block";
+          }
+        });
       }
-    });
-  }
 
-  /*document.addEventListener('DOMContentLoaded', function() {
-    var form = document.forms['formulario'];
-    var guardarButton = form.querySelector('.guardar');
+      document.addEventListener('DOMContentLoaded', function () {
+        var form = document.forms['formulario'];
+        var guardarButton = form.querySelector('.guardar');
 
-    guardarButton.addEventListener('click', function(event) {
-      event.preventDefault(); // Evitar que el formulario se envíe
+        guardarButton.addEventListener('click', function (event) {
+          event.preventDefault(); // Evitar que el formulario se envíe
 
-      var inputs = form.querySelectorAll('input');
-      var completo = true;
+          var inputs = form.querySelectorAll('input');
+          var completo = true;
 
-      inputs.forEach(function(input) {
-        if (input.value.trim() === '') {
-          completo = false;
-          return;
-        }
+          inputs.forEach(function (input) {
+            if (input.value.trim() === '') {
+              completo = false;
+              return;
+            }
+          });
+
+          function getFormData(form) {
+            const formData = new FormData(form);
+            return Object.fromEntries(formData);
+          }
+
+          if (completo) {
+            const formObj = getFormData(form);
+            const user = JSON.parse(localStorage.getItem('user'));
+            localStorage.setItem(user.email, JSON.stringify(formObj));
+            alert('Sus datos han sido guardados.');
+          } else {
+            alert('Por favor completar todos los campos.');
+          }
+        });
       });
 
-      if (completo) {
-        alert('Sus datos han sido guardados.');
-      } else {
-        alert('Por favor completar todos los campos.');
-      }
-    });
-  });*/
-
-  document.addEventListener("DOMContentLoaded", function() {
-  var accordionButtons = document.querySelectorAll(".accordion");
-  
-  accordionButtons.forEach(function(button) {
-    var submitButton = button.nextElementSibling.querySelector(".submit-button.listo");
-    var urlInput = button.nextElementSibling.querySelector("#url");
-    
-    submitButton.addEventListener("click", function() {
-      var urlValue = urlInput.value.trim();
-      
-      if (urlValue === "") {
-        alert("Debe pegar el link de YouTube");
-      } else {
-        var confirmation = confirm("Estás por enviar el link junto con su información. No podrá editarse nuevamente. ¿Deseas continuar?");
-        
-        if (confirmation) {
-          alert("¡Felicidades, ya subiste tu video! Se lo enviamos a tu profesor para que pueda evaluarlo");
-          urlInput.disabled = true;
-          submitButton.disabled = true;
+      document.addEventListener("DOMContentLoaded", function () {
+        const user = JSON.parse(localStorage.getItem('user'));
+        const project = JSON.parse(localStorage.getItem(user.email));
+        if (project && project.status) {
+          const calificacion = project.status === 'approved' ? 'Aprobado' : 'Desaprobado';
+          document.getElementById('cal-1').innerHTML = `
+        <p class="subtitulo-proceso">${calificacion}</p>
+      `;
         }
-      }
-    });
-  });
-});
+        var accordionButtons = document.querySelectorAll(".accordion");
 
-</script>
+        accordionButtons.forEach(function (button) {
+          var submitButton = button.nextElementSibling.querySelector(".submit-button.listo");
+          var urlInput = button.nextElementSibling.querySelector("#url");
+
+          submitButton.addEventListener("click", function () {
+            var urlValue = urlInput.value.trim();
+
+            if (urlValue === "") {
+              alert("Debes pegar el link de YouTube");
+            } else {
+              var confirmation = confirm("Estás por enviar el link junto con su información. No podrá editarse nuevamente. ¿Deseas continuar?");
+              const user = JSON.parse(localStorage.getItem('user'));
+              const project = JSON.parse(localStorage.getItem(user.email));
+              localStorage.setItem(user.email, JSON.stringify({ ...project, link: urlValue }));
+              localStorage.setItem('submitted', JSON.stringify([user.email]));
+              if (confirmation) {
+                alert("¡Felicidades, ya subiste tu video! Se lo enviamos a tu profesor para que pueda evaluarlo");
+                urlInput.disabled = true;
+                submitButton.disabled = true;
+              }
+            }
+          });
+        });
+      });
+
+    </script>
 </body>
 </html>

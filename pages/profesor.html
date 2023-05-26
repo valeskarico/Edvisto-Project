@@ -1,302 +1,376 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluar Proyecto</title>
-    <link rel="shortcut icon" href="../img/Group-61.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
-    <link rel="stylesheet" href="../css/style2.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluar Proyecto</title>
+  <link rel="shortcut icon" href="../img/Group-61.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css">
+  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <nav>
-      <a href="#" title="EdVisto">
-        <img src="../img/edvisto-logo.png.webp" alt="edvisto-logo" class="logo">
-      </a>
-        <a href="#" class="menu">
-          <span class="fa fa-bars"></span>
-          <span class="label">MENÚ</span>
-        </a>
-        <a href="#" class="video">
-          <span class="fas fa-film"></span>
-          <span class="label">Mis Videos</span>
-        </a>
-        <a href="../index.html" class="salir">
-          <span class="fas fa-sign-in-alt"></span>
-          <span class="label">Salir</span>
-        </a>
-    </nav>
-    <div class="container">
-      <p class="email-ingreso"><span id="emailProfesor"></span></p>
-      <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">SELECCIONAR EMAIL DEL ALUMNO</button><i class="fa-solid fa-circle-chevron-down" onclick="myFunction()"></i>
-        <div id="myDropdown" class="dropdown-content">
-          <input type="text" placeholder="Buscar..." id="myInput" onkeyup="filterFunction()">
-          <a href="#">ALUMNO1@EMAIL.COM</a>
-          <a href="#">ALUMNO2@EMAIL.COM</a>
-          <a href="#">ALUMNO3@EMAIL.COM</a>
-          <a href="#">ALUMNO4@EMAIL.COM</a>
-        </div>
+  <nav>
+    <a href="#" title="EdVisto">
+      <img src="../img/edvisto-logo.png.webp" alt="edvisto-logo" class="logo">
+    </a>
+    <a href="#" class="menu">
+      <span class="fa fa-bars"></span>
+      <span class="label">MENÚ</span>
+    </a>
+    <a href="#" class="video">
+      <span class="fas fa-film"></span>
+      <span class="label">Mis Videos</span>
+    </a>
+    <a class="salir" href="#" onClick="localStorage.removeItem('user'); window.location.href = '/index.html'">
+    <span class="fas fa-sign-in-alt"></span>
+    <span class="label">Salir</span>
+    </a>
+  </nav>
+  <div class="container">
+    <p class="email-ingreso"><span id="emailProfesor"></span></p>
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn">SELECCIONAR EMAIL DEL ALUMNO</button><i
+        class="fa-solid fa-circle-chevron-down" onclick="myFunction()"></i>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Buscar..." id="myInput" onkeyup="filterFunction()" autoFocus>
+        <div id="users"></div>
       </div>
-      
+    </div>
+    <div class="no-user">
+      <h3>No hay un usuario seleccionado aún</h3>
+      <p>Para continuar por favor, seleccione un usuario de la lista</p>
+    </div>
+    <div class="projectos-estudiante">
       <div class="form-group group-p">
         <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
         <input type="text" name="nombre-lider" id="nombre-lider" placeholder="ALUMNO ALUMNO" disabled><br>
 
         <label class="titulo-proyecto">TITULO DEL PROYECTO</label><br>
         <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="LA HUERTA" disabled><br>
-      </div>  
-        <div class="calificaciones" id="cal">
-          <h1 class="titulo dos">EVALUAR PROYECTO</h1>
+      </div>
+      <div class="calificaciones" id="cal">
+        <h1 class="titulo dos">EVALUAR PROYECTO</h1>
 
-          <button class="accordion green titulo-proceso">1- PRIMEROS PASOS</button>
-            <div class="panel">
-              <p class="subtitulo-proceso">En este video, el grupo se presenta, y comienza su camino. Los alumnos pueden contar sus propuestas y expectativas. Es  la INTRODUCCIÓN del proyecto.</p>
+        <button class="accordion green titulo-proceso">1- PRIMEROS PASOS</button>
+        <div class="panel">
+          <p class="subtitulo-proceso">En este video, el grupo se presenta, y comienza su camino. Los alumnos pueden
+            contar sus propuestas y expectativas. Es la INTRODUCCIÓN del proyecto.</p>
 
-              <div class="link-youtube">
-                <i class="fa-brands fa-youtube yt-link"></i><a href="https://www.youtube.com" target="_blank" class="redireccion">Ir a link de YouTube</a>
+          <div class="link-youtube">
+            <i class="fa-brands fa-youtube yt-link"></i><a id="yt-link-1" href="https://www.youtube.com" target="_blank"
+              class="redireccion">Ir a link de YouTube</a>
+          </div>
+
+          <div class="subtitulo-proceso">
+            <p>Aquí se pueden valorar cada una de "Las 4 C de la educación"</p>
+            <p>Se sugiere realizar una evaluación cualitativa cuyo objetivo sea retroalimentar y reorientar el proceso
+              educativo. Puede destacar los logros y/o realizar sugerencias de cambios.</p>
+            <p>Complete los campos que considere necesario. No es obligatorio completar todos.</p>
+            <p class="text-mobile">Para más información sobre cada habilidad, ubique el cursor en <i
+                class='fas fa-exclamation-circle' title="Información"></i></p>
+          </div>
+
+          <div class="box-textarea">
+            <div class="textareas">
+              <div class="textarea">
+                <label class="pensamiento">Pensamiento crítico</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es la búsqueda de soluciones y el análisis de los errores y toma de decisiones."></i><br>
+                <p class="info-mobile">Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es
+                  la búsqueda de soluciones y el análisis de los errores y toma de decisiones.</p>
+                <textarea id="textarea-1" name="textarea1" rows="6" cols="30"></textarea>
               </div>
 
-              <div class="subtitulo-proceso">
-                <p>Aquí se pueden valorar cada una de "Las 4 C de la educación"</p>
-                <p>Se sugiere realizar una evaluación cualitativa cuyo objetivo sea retroalimentar y reorientar el proceso educativo. Puede destacar los logros y/o realizar sugerencias de cambios.</p> 
-                <p>Complete los campos que considere necesario. No es obligatorio completar todos.</p>   
-                <p class="text-mobile">Para más información sobre cada habilidad, ubique el cursor en <i class='fas fa-exclamation-circle' title="Información"></i></p>
+              <div class="textarea">
+                <label class="colaboracion">Colaboración</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos."></i><br>
+                <p class="info-mobile">Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron
+                  ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos.</p>
+                <textarea id="textarea-2" name="textarea2" rows="6" cols="30"></textarea>
               </div>
 
-              <div class="box-textarea">
-                <div class="textareas">
-                  <div class="textarea">
-                    <label class="pensamiento">Pensamiento crítico</label><i class='fas fa-exclamation-circle' title="Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es la búsqueda de soluciones y el análisis de los errores y toma de decisiones."></i><br>
-                    <p class="info-mobile">Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es la búsqueda de soluciones y el análisis de los errores y toma de decisiones.</p>
-                    <textarea id="textarea1" name="textarea1" rows="6" cols="30"></textarea>
-                  </div>
+            </div>
 
-                  <div class="textarea">
-                    <label class="colaboracion">Colaboración</label><i class='fas fa-exclamation-circle' title="Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos."></i><br>
-                    <p class="info-mobile">Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos.</p>
-                    <textarea id="textarea2" name="textarea2" rows="6" cols="30"></textarea>
-                  </div>
+            <div class="textareas">
+              <div class="textarea">
+                <label class="comunicacion">Comunicación</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar cómo se transmite la información entre si, y para hacia el docente, si hubo lugar para el debate, la organización del mensaje."></i><br>
+                <p class="info-mobile">Evaluar cómo se transmite la información entre si, y para hacia el docente, si
+                  hubo lugar para el debate, la organización del mensaje.</p>
+                <textarea id="textarea-3" name="textarea3" rows="6" cols="30"></textarea>
+              </div>
 
-                </div>
-
-                <div class="textareas">
-                  <div class="textarea">
-                    <label class="comunicacion">Comunicación</label><i class='fas fa-exclamation-circle' title="Evaluar cómo se transmite la información entre si, y para hacia el docente, si hubo lugar para el debate, la organización del mensaje."></i><br>
-                    <p class="info-mobile">Evaluar cómo se transmite la información entre si, y para hacia el docente, si hubo lugar para el debate, la organización del mensaje.</p>
-                    <textarea id="textarea3" name="textarea3" rows="6" cols="30"></textarea>
-                  </div>
-
-                  <div class="textarea">
-                    <label class="creatividad">Creatividad</label><i class='fas fa-exclamation-circle' title="Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual."></i><br>
-                    <p class="info-mobile">Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual.</p>
-                    <textarea id="textarea4" name="textarea4" rows="6" cols="30"></textarea>
-                  </div>
-                </div>
-
-                <div class="box-button">
-                  <h3 class="titulo-cal">CALIFICACIÓN DEL VIDEO*:</h3>
-                  <input type="button" id="btnAprobado" class="button-aprobado" value="APROBADO">
-                  <input type="button" id="btnDesaprobado" class="button-desaprobado" value="DESAPROBADO">
-                </div>
-
-                <div class="info-text">
-                  <p>*campo obligatorio</p>
-                  <p>“APROBADO”: generará un nuevo ítem para la colección del alumno y desbloqueará el próximo nivel.</p>
-                  <p>“DESAPROBADO”: originará una nueva oportunidad al grupo para subir nuevamente un video en esta sección.</p>
-                </div>
+              <div class="textarea">
+                <label class="creatividad">Creatividad</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual."></i><br>
+                <p class="info-mobile">Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado
+                  a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual.</p>
+                <textarea id="textarea-4" name="textarea4" rows="6" cols="30"></textarea>
               </div>
             </div>
 
-            <button class="accordion green titulo-proceso">2- ¡MANOS A LA OBRA!</button>
-            <div class="panel">
-              <p class="subtitulo-proceso">Es momento de llevar a la práctica las ideas. Se da rienda suelta a la EXPERIMENTACIÓN de los alumnos.</p>
-
-              <div class="link-youtube">
-                <i class="fa-brands fa-youtube yt-link deshabilitado"></i><a href="#" class="redireccion deshabilitado">TODAVIA NO HAY VIDEO PARA MOSTRAR</a>
-              </div>
-
-              <div class="subtitulo-proceso">
-                <p>Aquí se pueden valorar cada una de "Las 4 C de la educación"</p>
-                <p>Se sugiere realizar una evaluación cualitativa cuyo objetivo sea retroalimentar y reorientar el proceso educativo. Puede destacar los logros y/o realizar sugerencias de cambios.</p> 
-                <p>Complete los campos que considere necesario. No es obligatorio completar todos.</p>   
-                <p class="text-mobile">Para más información sobre cada habilidad, ubique el cursor en <i class='fas fa-exclamation-circle' title="Información"></i></p>
-              </div>
-
-              <div class="box-textarea">
-                <div class="textareas">
-                  <div class="textarea">
-                    <label class="pensamiento">Pensamiento crítico</label><i class='fas fa-exclamation-circle' title="Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es la búsqueda de soluciones y el análisis de los errores y toma de decisiones."></i><br>
-                    <p class="info-mobile">Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es la búsqueda de soluciones y el análisis de los errores y toma de decisiones.</p>
-                    <textarea id="textarea1" name="textarea1" rows="6" cols="30"></textarea>
-                  </div>
-
-                  <div class="textarea">
-                    <label class="colaboracion">Colaboración</label><i class='fas fa-exclamation-circle' title="Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos."></i><br>
-                    <p class="info-mobile">Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos.</p>
-                    <textarea id="textarea2" name="textarea2" rows="6" cols="30"></textarea>
-                  </div>
-
-                </div>
-
-                <div class="textareas">
-                  <div class="textarea">
-                    <label class="comunicacion">Comunicación</label><i class='fas fa-exclamation-circle' title="Evaluar cómo se transmite la información entre si, y para hacia el docente, si hubo lugar para el debate, la organización del mensaje."></i><br>
-                    <p class="info-mobile">Evaluar cómo se transmite la información entre si, y para hacia el docente, si hubo lugar para el debate, la organización del mensaje.</p>
-                    <textarea id="textarea3" name="textarea3" rows="6" cols="30"></textarea>
-                  </div>
-
-                  <div class="textarea">
-                    <label class="creatividad">Creatividad</label><i class='fas fa-exclamation-circle' title="Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual."></i><br>
-                    <p class="info-mobile">Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual.</p>
-                    <textarea id="textarea4" name="textarea4" rows="6" cols="30"></textarea>
-                  </div>
-                </div>
-
-                <div class="box-button">
-                  <h3 class="titulo-cal">CALIFICACIÓN DEL VIDEO*:</h3>
-                  <input type="button" class="button-aprobado" value="APROBADO">
-                  <input type="button" class="button-desaprobado" value="DESAPROBADO">
-                </div>
-
-                <div class="info-text">
-                  <p>*campo obligatorio</p>
-                  <p>“APROBADO”: generará un nuevo ítem para la colección del alumno y desbloqueará el próximo nivel.</p>
-                  <p>“DESAPROBADO”: originará una nueva oportunidad al grupo para subir nuevamente un video en esta sección.</p>
-                </div>
-              </div>
+            <div class="box-button">
+              <h3 class="titulo-cal">CALIFICACIÓN DEL VIDEO*:</h3>
+              <input type="button" id="btnAprobado" class="button-aprobado" value="APROBADO">
+              <input type="button" id="btnDesaprobado" class="button-desaprobado" value="DESAPROBADO">
             </div>
 
-            <button class="accordion green titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
-            <div class="panel">
-              <p class="subtitulo-proceso">Repasando las tareas anteriores, los alumnos pueden comentar reflexiones, opiniones y sensaciones. Es la CONCLUSIÓN del proyecto.</p>
-
-              <div class="link-youtube">
-                <i class="fa-brands fa-youtube yt-link deshabilitado"></i><a href="#" class="redireccion deshabilitado">TODAVIA NO HAY VIDEO PARA MOSTRAR</a>
-              </div>
-
-              <div class="subtitulo-proceso">
-                <p>Aquí se pueden valorar cada una de "Las 4 C de la educación"</p>
-                <p>Se sugiere realizar una evaluación cualitativa cuyo objetivo sea retroalimentar y reorientar el proceso educativo. Puede destacar los logros y/o realizar sugerencias de cambios.</p> 
-                <p>Complete los campos que considere necesario. No es obligatorio completar todos.</p>   
-                <p class="text-mobile">Para más información sobre cada habilidad, ubique el cursor en <i class='fas fa-exclamation-circle' title="Información"></i></p>
-              </div>
-
-              <div class="box-textarea">
-                <div class="textareas">
-                  <div class="textarea">
-                    <label class="pensamiento">Pensamiento crítico</label><i class='fas fa-exclamation-circle' title="Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es la búsqueda de soluciones y el análisis de los errores y toma de decisiones."></i><br>
-                    <p class="info-mobile">Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es la búsqueda de soluciones y el análisis de los errores y toma de decisiones.</p>
-                    <textarea id="textarea1" name="textarea1" rows="6" cols="30"></textarea>
-                  </div>
-
-                  <div class="textarea">
-                    <label class="colaboracion">Colaboración</label><i class='fas fa-exclamation-circle' title="Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos."></i><br>
-                    <p class="info-mobile">Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos.</p>
-                    <textarea id="textarea2" name="textarea2" rows="6" cols="30"></textarea>
-                  </div>
-
-                </div>
-
-                <div class="textareas">
-                  <div class="textarea">
-                    <label class="comunicacion">Comunicación</label><i class='fas fa-exclamation-circle' title="Evaluar cómo se transmite la información entre si, y para hacia el docente, si hubo lugar para el debate, la organización del mensaje."></i><br>
-                    <p class="info-mobile">Evaluar cómo se transmite la información entre si, y para hacia el docente, si hubo lugar para el debate, la organización del mensaje.</p>
-                    <textarea id="textarea3" name="textarea3" rows="6" cols="30"></textarea>
-                  </div>
-
-                  <div class="textarea">
-                    <label class="creatividad">Creatividad</label><i class='fas fa-exclamation-circle' title="Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual."></i><br>
-                    <p class="info-mobile">Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual.</p>
-                    <textarea id="textarea4" name="textarea4" rows="6" cols="30"></textarea>
-                  </div>
-                </div>
-
-                <div class="box-button">
-                  <h3 class="titulo-cal">CALIFICACIÓN DEL VIDEO*:</h3>
-                  <input type="button" class="button-aprobado" value="APROBADO">
-                  <input type="button" class="button-desaprobado" value="DESAPROBADO">
-                </div>
-
-                <div class="info-text">
-                  <p>*campo obligatorio</p>
-                  <p>“APROBADO”: generará un nuevo ítem para la colección del alumno y desbloqueará el próximo nivel.</p>
-                  <p>“DESAPROBADO”: originará una nueva oportunidad al grupo para subir nuevamente un video en esta sección.</p>
-                </div>
-              </div>
+            <div class="info-text">
+              <p>*campo obligatorio</p>
+              <p>“APROBADO”: generará un nuevo ítem para la colección del alumno y desbloqueará el próximo nivel.</p>
+              <p>“DESAPROBADO”: originará una nueva oportunidad al grupo para subir nuevamente un video en esta sección.
+              </p>
             </div>
-
+          </div>
         </div>
-    </div>
-    <div class="footer">
-      <a href="../index.html" class="texto-footer">Salir</a>
-    </div>
-    <script>
 
-        // Obtener el correo electrónico migrado de localStorage
-      var emailProfesor = localStorage.getItem("emailProfesor");
+        <button class="accordion green titulo-proceso">2- ¡MANOS A LA OBRA!</button>
+        <div class="panel">
+          <p class="subtitulo-proceso">Es momento de llevar a la práctica las ideas. Se da rienda suelta a la
+            EXPERIMENTACIÓN de los alumnos.</p>
 
-      // Mostrar el correo electrónico en el elemento con el ID "emailEstudiante"
-      document.getElementById("emailProfesor").textContent = emailProfesor;
-      //
-      
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-      
-      function filterFunction() {
-        var input, filter, ul, li, a, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        div = document.getElementById("myDropdown");
-        a = div.getElementsByTagName("a");
-        for (i = 0; i < a.length; i++) {
-          txtValue = a[i].textContent || a[i].innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-          } else {
-            a[i].style.display = "none";
-          }
+          <div class="link-youtube">
+            <i class="fa-brands fa-youtube yt-link deshabilitado"></i><a href="#"
+              class="redireccion deshabilitado">TODAVIA NO HAY VIDEO PARA MOSTRAR</a>
+          </div>
+
+          <div class="subtitulo-proceso">
+            <p>Aquí se pueden valorar cada una de "Las 4 C de la educación"</p>
+            <p>Se sugiere realizar una evaluación cualitativa cuyo objetivo sea retroalimentar y reorientar el proceso
+              educativo. Puede destacar los logros y/o realizar sugerencias de cambios.</p>
+            <p>Complete los campos que considere necesario. No es obligatorio completar todos.</p>
+            <p class="text-mobile">Para más información sobre cada habilidad, ubique el cursor en <i
+                class='fas fa-exclamation-circle' title="Información"></i></p>
+          </div>
+
+          <div class="box-textarea">
+            <div class="textareas">
+              <div class="textarea">
+                <label class="pensamiento">Pensamiento crítico</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es la búsqueda de soluciones y el análisis de los errores y toma de decisiones."></i><br>
+                <p class="info-mobile">Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es
+                  la búsqueda de soluciones y el análisis de los errores y toma de decisiones.</p>
+                <textarea id="textarea-5" name="textarea1" rows="6" cols="30"></textarea>
+              </div>
+
+              <div class="textarea">
+                <label class="colaboracion">Colaboración</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos."></i><br>
+                <p class="info-mobile">Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron
+                  ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos.</p>
+                <textarea id="textarea-6" name="textarea2" rows="6" cols="30"></textarea>
+              </div>
+
+            </div>
+
+            <div class="textareas">
+              <div class="textarea">
+                <label class="comunicacion">Comunicación</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar cómo se transmite la información entre si, y para hacia el docente, si hubo lugar para el debate, la organización del mensaje."></i><br>
+                <p class="info-mobile">Evaluar cómo se transmite la información entre si, y para hacia el docente, si
+                  hubo lugar para el debate, la organización del mensaje.</p>
+                <textarea id="textarea-7" name="textarea3" rows="6" cols="30"></textarea>
+              </div>
+
+              <div class="textarea">
+                <label class="creatividad">Creatividad</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual."></i><br>
+                <p class="info-mobile">Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado
+                  a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual.</p>
+                <textarea id="textarea-8" name="textarea4" rows="6" cols="30"></textarea>
+              </div>
+            </div>
+
+            <div class="box-button">
+              <h3 class="titulo-cal">CALIFICACIÓN DEL VIDEO*:</h3>
+              <input type="button" class="button-aprobado" value="APROBADO">
+              <input type="button" class="button-desaprobado" value="DESAPROBADO">
+            </div>
+
+            <div class="info-text">
+              <p>*campo obligatorio</p>
+              <p>“APROBADO”: generará un nuevo ítem para la colección del alumno y desbloqueará el próximo nivel.</p>
+              <p>“DESAPROBADO”: originará una nueva oportunidad al grupo para subir nuevamente un video en esta sección.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button class="accordion green titulo-proceso">3- ¿QUÉ APRENDIMOS?</button>
+        <div class="panel">
+          <p class="subtitulo-proceso">Repasando las tareas anteriores, los alumnos pueden comentar reflexiones,
+            opiniones y sensaciones. Es la CONCLUSIÓN del proyecto.</p>
+
+          <div class="link-youtube">
+            <i class="fa-brands fa-youtube yt-link deshabilitado"></i><a href="#"
+              class="redireccion deshabilitado">TODAVIA NO HAY VIDEO PARA MOSTRAR</a>
+          </div>
+
+          <div class="subtitulo-proceso">
+            <p>Aquí se pueden valorar cada una de "Las 4 C de la educación"</p>
+            <p>Se sugiere realizar una evaluación cualitativa cuyo objetivo sea retroalimentar y reorientar el proceso
+              educativo. Puede destacar los logros y/o realizar sugerencias de cambios.</p>
+            <p>Complete los campos que considere necesario. No es obligatorio completar todos.</p>
+            <p class="text-mobile">Para más información sobre cada habilidad, ubique el cursor en <i
+                class='fas fa-exclamation-circle' title="Información"></i></p>
+          </div>
+
+          <div class="box-textarea">
+            <div class="textareas">
+              <div class="textarea">
+                <label class="pensamiento">Pensamiento crítico</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es la búsqueda de soluciones y el análisis de los errores y toma de decisiones."></i><br>
+                <p class="info-mobile">Evaluar cómo se perciben los problemas, cómo se elaboran las hipótesis, cómo es
+                  la búsqueda de soluciones y el análisis de los errores y toma de decisiones.</p>
+                <textarea id="textarea-9" name="textarea1" rows="6" cols="30"></textarea>
+              </div>
+
+              <div class="textarea">
+                <label class="colaboracion">Colaboración</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos."></i><br>
+                <p class="info-mobile">Evaluar si hubo trabajo en equipo, división de roles y tareas, cómo lograron
+                  ponerse de acuerdo, si fueron respetuosos con las opiniones e ideas de todos.</p>
+                <textarea id="textarea-10" name="textarea2" rows="6" cols="30"></textarea>
+              </div>
+
+            </div>
+
+            <div class="textareas">
+              <div class="textarea">
+                <label class="comunicacion">Comunicación</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar cómo se transmite la información entre si, y para hacia el docente, si hubo lugar para el debate, la organización del mensaje."></i><br>
+                <p class="info-mobile">Evaluar cómo se transmite la información entre si, y para hacia el docente, si
+                  hubo lugar para el debate, la organización del mensaje.</p>
+                <textarea id="textarea-11" name="textarea3" rows="6" cols="30"></textarea>
+              </div>
+
+              <div class="textarea">
+                <label class="creatividad">Creatividad</label><i class='fas fa-exclamation-circle'
+                  title="Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual."></i><br>
+                <p class="info-mobile">Evaluar la particularidad de las ideas al momento de las propuestas, el uso dado
+                  a las herramientas tecnológicas y no tecnológicas, y la presentación del material audiovisual.</p>
+                <textarea id="textarea-12" name="textarea4" rows="6" cols="30"></textarea>
+              </div>
+            </div>
+
+            <div class="box-button">
+              <h3 class="titulo-cal">CALIFICACIÓN DEL VIDEO*:</h3>
+              <input type="button" class="button-aprobado" value="APROBADO">
+              <input type="button" class="button-desaprobado" value="DESAPROBADO">
+            </div>
+
+            <div class="info-text">
+              <p>*campo obligatorio</p>
+              <p>“APROBADO”: generará un nuevo ítem para la colección del alumno y desbloqueará el próximo nivel.</p>
+              <p>“DESAPROBADO”: originará una nueva oportunidad al grupo para subir nuevamente un video en esta sección.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <a href="../index.html" class="texto-footer">Salir</a>
+  </div>
+  <input type="hidden" id="user-selected" style="display: none;">
+  <script>
+
+    // Obtener el correo electrónico migrado de localStorage
+    var emailProfesor = localStorage.getItem("emailProfesor");
+
+    // Mostrar el correo electrónico en el elemento con el ID "emailEstudiante"
+    document.getElementById("emailProfesor").textContent = emailProfesor;
+    //
+
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+      document.getElementById("myInput").focus();
+    }
+
+    function loadUsers() {
+      const users = JSON.parse(localStorage.getItem('submitted'));
+      users.forEach((user) => {
+        const projects = JSON.parse(localStorage.getItem(user));
+        const userLink = document.createElement('a');
+        userLink.innerHTML = user.toUpperCase();
+        userLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.getElementById('user-selected').value = user;
+          document.querySelector('.no-user').style.display = 'none';
+          document.getElementById("myDropdown").classList.toggle("show");
+          document.querySelector('.projectos-estudiante').style.display = 'block';
+          document.getElementById('nombre-lider').value = projects['nombre-lider'];
+          document.getElementById('titulo-proyecto').value = projects['titulo-proyecto'];
+          document.getElementById('yt-link-1').href = projects['link'];
+        })
+        document.getElementById('users').appendChild(userLink);
+      })
+    }
+
+    function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("myDropdown");
+      a = div.getElementsByTagName("a");
+      for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().startsWith(filter)) {
+          a[i].style.display = "";
+        } else {
+          a[i].style.display = "none";
         }
       }
+    }
 
-      var acc = document.getElementsByClassName("accordion");
-      var i;
+    var acc = document.getElementsByClassName("accordion");
+    var i;
 
-      for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-          this.classList.toggle("active");
-          var panel = this.nextElementSibling;
-          if (panel.style.display === "block") {
-            panel.style.display = "none";
-          } else {
-            panel.style.display = "block";
-          }
-        });
-      }
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
 
-      document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       var btnAprobado = document.getElementById('btnAprobado');
       var btnDesaprobado = document.getElementById('btnDesaprobado');
-      
-      btnAprobado.addEventListener('click', function() {
+
+      btnAprobado.addEventListener('click', function () {
         var confirmacion = confirm('Está por enviar una evaluación de "video aprobado", la cual será irreversible. ¿Desea continuar?');
         if (confirmacion) {
+          var projName = document.getElementById('user-selected').value;
+          var proj = JSON.parse(localStorage.getItem(projName));
+          localStorage.setItem(projName, JSON.stringify({ ...proj, 'status': 'approved' }))
           alert('¡Felicidades! Ya terminaste tu evaluación. Se la enviamos al alumno');
         }
       });
-      
-      btnDesaprobado.addEventListener('click', function() {
+
+      btnDesaprobado.addEventListener('click', function () {
         var confirmacion = confirm('Está por enviar una evaluación de "video desaprobado", la cual será irreversible. ¿Desea continuar?');
         if (confirmacion) {
+          var projName = document.getElementById('user-selected').value;
+          var proj = JSON.parse(localStorage.getItem(projName));
+          localStorage.setItem(projName, JSON.stringify({ ...proj, 'status': 'disapproved' }))
           alert('¡Felicidades! Ya terminaste tu evaluación. Se la enviamos al alumno');
         }
       });
+      loadUsers();
     });
-    </script>
-  </body>
-  </html>
+  </script>
+</body>
+
+</html>

@@ -178,13 +178,13 @@ input[type=text], input[type=email], input[type=url]{
   padding-left: 50px;
 }
 
-#url-1, #url-2, #url-3{
+#url{
   width: 70%;
   margin-bottom: 50px;
   padding-left: 40px;
 }
 
-button[type=submit], button[type=button]{
+button[type=submit]{
   border-radius: 15px;
   background: #e98862;
   font-size: 1.25rem;
@@ -438,6 +438,20 @@ input[type=button]{
   cursor: default;
 }
 
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.no-user {
+  margin: 2em 0;
+}
+
+.projectos-estudiante {
+  display: none;
+}
+
 /*PROFESOR*/
 
 @media only screen and (max-width: 600px) {
@@ -505,7 +519,7 @@ input[type=text], input[type=email], input[type=url]{
   margin-left: 10px;
 }
 
-button[type=submit], button[type=button]{
+button[type=submit]{
   border-radius: 15px;
   font-size: 1rem;
   padding: 10px 15px;

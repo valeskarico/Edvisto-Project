@@ -7,9 +7,9 @@ function getFormData(form) {
 
 function redirectAfterLogin(rol) {
   if (rol === 'teacher') {
-    return window.location.href = './pages/profesor.html';
+    return window.location.href = '/pages/profesor.html';
   }
-  return window.location.href = './pages/estudiante.html';
+  return window.location.href = '/pages/estudiante.html';
 }
 
 function validarEmail(email) {

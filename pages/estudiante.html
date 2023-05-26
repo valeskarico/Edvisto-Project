@@ -156,37 +156,43 @@
       }
 
       document.addEventListener('DOMContentLoaded', function () {
-        var form = document.forms['formulario'];
-        var guardarButton = form.querySelector('.guardar');
+      var form = document.forms['formulario'];
+      var guardarButton = form.querySelector('.guardar');
 
-        guardarButton.addEventListener('click', function (event) {
-          event.preventDefault(); // Evitar que el formulario se envíe
+      guardarButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Evitar que el formulario se envíe
 
-          var inputs = form.querySelectorAll('input');
-          var completo = true;
+        var inputs = form.querySelectorAll('input');
+        var completo = true;
 
-          inputs.forEach(function (input) {
-            if (input.value.trim() === '') {
-              completo = false;
-              return;
-            }
-          });
-
-          function getFormData(form) {
-            const formData = new FormData(form);
-            return Object.fromEntries(formData);
-          }
-
-          if (completo) {
-            const formObj = getFormData(form);
-            const user = JSON.parse(localStorage.getItem('user'));
-            localStorage.setItem(user.email, JSON.stringify(formObj));
-            alert('Sus datos han sido guardados.');
-          } else {
-            alert('Por favor completar todos los campos.');
+        inputs.forEach(function (input) {
+          if (input.value.trim() === '') {
+            completo = false;
+            return;
           }
         });
+
+        function getFormData(form) {
+          const formData = new FormData(form);
+          return Object.fromEntries(formData);
+        }
+
+        if (completo) {
+          const formObj = getFormData(form);
+          const user = JSON.parse(localStorage.getItem('user'));
+          localStorage.setItem(user.email, JSON.stringify(formObj));
+          alert('Sus datos han sido guardados.');
+
+          // Deshabilitar inputs y cambiar color a gris
+          inputs.forEach(function (input) {
+            input.disabled = true;
+            input.style.backgroundColor = '#D8D8D8';
+          });
+        } else {
+          alert('Por favor completar todos los campos.');
+        }
       });
+    });
 
       document.addEventListener("DOMContentLoaded", function () {
         const user = JSON.parse(localStorage.getItem('user'));
@@ -218,6 +224,7 @@
                 alert("¡Felicidades, ya subiste tu video! Se lo enviamos a tu profesor para que pueda evaluarlo");
                 urlInput.disabled = true;
                 submitButton.disabled = true;
+                urlInput.style.backgroundColor = '#D8D8D8'
               }
             }
           });

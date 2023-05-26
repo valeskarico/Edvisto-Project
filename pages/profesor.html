@@ -345,31 +345,58 @@
       });
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      var btnAprobado = document.getElementById('btnAprobado');
-      var btnDesaprobado = document.getElementById('btnDesaprobado');
+  document.addEventListener('DOMContentLoaded', function () {
+    var btnAprobado = document.getElementById('btnAprobado');
+    var btnDesaprobado = document.getElementById('btnDesaprobado');
 
-      btnAprobado.addEventListener('click', function () {
-        var confirmacion = confirm('Está por enviar una evaluación de "video aprobado", la cual será irreversible. ¿Desea continuar?');
-        if (confirmacion) {
-          var projName = document.getElementById('user-selected').value;
-          var proj = JSON.parse(localStorage.getItem(projName));
-          localStorage.setItem(projName, JSON.stringify({ ...proj, 'status': 'approved' }))
-          alert('¡Felicidades! Ya terminaste tu evaluación. Se la enviamos al alumno');
-        }
-      });
+  btnAprobado.addEventListener('click', function () {
+    var confirmacion = confirm('Está por enviar una evaluación de "video aprobado", la cual será irreversible. ¿Desea continuar?');
+    if (confirmacion) {
+      var projName = document.getElementById('user-selected').value;
+      var proj = JSON.parse(localStorage.getItem(projName));
+      localStorage.setItem(projName, JSON.stringify({ ...proj, 'status': 'approved' }));
 
-      btnDesaprobado.addEventListener('click', function () {
-        var confirmacion = confirm('Está por enviar una evaluación de "video desaprobado", la cual será irreversible. ¿Desea continuar?');
-        if (confirmacion) {
-          var projName = document.getElementById('user-selected').value;
-          var proj = JSON.parse(localStorage.getItem(projName));
-          localStorage.setItem(projName, JSON.stringify({ ...proj, 'status': 'disapproved' }))
-          alert('¡Felicidades! Ya terminaste tu evaluación. Se la enviamos al alumno');
-        }
-      });
-      loadUsers();
-    });
+      // Deshabilitar textareas 1, 2, 3 y 4
+      document.getElementById('textarea-1').disabled = true;
+      document.getElementById('textarea-2').disabled = true;
+      document.getElementById('textarea-3').disabled = true;
+      document.getElementById('textarea-4').disabled = true;
+
+      // Cambiar el color de fondo de textareas 1, 2, 3 y 4 a gris
+      document.getElementById('textarea-1').style.backgroundColor = 'lightgray';
+      document.getElementById('textarea-2').style.backgroundColor = 'lightgray';
+      document.getElementById('textarea-3').style.backgroundColor = 'lightgray';
+      document.getElementById('textarea-4').style.backgroundColor = 'lightgray';
+
+      alert('¡Felicidades! Ya terminaste tu evaluación. Se la enviamos al alumno');
+    }
+  });
+
+  btnDesaprobado.addEventListener('click', function () {
+    var confirmacion = confirm('Está por enviar una evaluación de "video desaprobado", la cual será irreversible. ¿Desea continuar?');
+    if (confirmacion) {
+      var projName = document.getElementById('user-selected').value;
+      var proj = JSON.parse(localStorage.getItem(projName));
+      localStorage.setItem(projName, JSON.stringify({ ...proj, 'status': 'disapproved' }));
+
+      // Deshabilitar textareas 1, 2, 3 y 4
+      document.getElementById('textarea-1').disabled = true;
+      document.getElementById('textarea-2').disabled = true;
+      document.getElementById('textarea-3').disabled = true;
+      document.getElementById('textarea-4').disabled = true;
+
+      // Cambiar el color de fondo de textareas 1, 2, 3 y 4 a gris
+      document.getElementById('textarea-1').style.backgroundColor = 'lightgray';
+      document.getElementById('textarea-2').style.backgroundColor = 'lightgray';
+      document.getElementById('textarea-3').style.backgroundColor = 'lightgray';
+      document.getElementById('textarea-4').style.backgroundColor = 'lightgray';
+
+      alert('¡Felicidades! Ya terminaste tu evaluación. Se la enviamos al alumno');
+    }
+  });
+
+  loadUsers();
+});
   </script>
 </body>
 

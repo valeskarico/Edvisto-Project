@@ -16,7 +16,7 @@
     <div class="form-container">
         <img src="./img/edvisto-logo.png.webp" alt="logo" class="logo">
         
-        <form name="formulario" class="form" id="login">
+        <form name="formulario" class="form" id="login" onsubmit="return validarAcceso();">
 
           <h1 class="titulo">Correo Electrónico</h1>
           <input type="email" name="email" id="email" placeholder="EJEMPLO@EMAIL.COM" class="input-email" maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
@@ -39,5 +39,26 @@
     <script src="./js/ingreso.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function validarAcceso() {
+        // Obtener el valor del correo electrónico ingresado
+        var email = document.getElementById("email").value;
+  
+        // Obtener el valor del rol seleccionado
+        var rol = document.querySelector('input[name="rol"]:checked').value;
+  
+        // Guardar el correo electrónico en el localStorage dependiendo del rol
+        if (rol === "student") {
+          localStorage.setItem("emailEstudiante", email);
+          window.location.href = "pages/estudiante.html";
+        } else if (rol === "teacher") {
+          localStorage.setItem("emailProfesor", email);
+          window.location.href = "pages/profesor.html";
+        }
+  
+        // Evitar que se envíe el formulario y se recargue la página
+        return false;
+      }
+    </script>
 </body>
 </html>

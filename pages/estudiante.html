@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/style2.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="sweetalert2.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
 </head>
 
@@ -49,7 +50,7 @@
 
             <label class="email-profesor">EMAIL DEL PROFESOR</label><br>
             <input type="email" name="email-profesor" id="email-profesor" placeholder="E-MAIL DEL PROFESOR"
-              maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
+              maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
 
             <label class="nombre-lider">NOMBRE COMPLETO DEL LIDER</label><br>
             <input type="text" name="nombre-lider" id="nombre-lider" placeholder="NOMBRE COMPLETO DEL LÍDER"
@@ -57,7 +58,7 @@
 
             <label class="email-lider">EMAIL DEL LIDER</label><br>
             <input type="email" name="email-lider" id="email-lider" placeholder="E-MAIL DEL LÍDER DEL PROYECTO"
-              maxlength="256" onkeyup="this.value = this.value.toUpperCase();"><br>
+              maxlength="60" onkeyup="this.value = this.value.toUpperCase();"><br>
 
             <label class="nombre-lider">TITULO DEL PROYECTO</label><br>
             <input type="text" name="titulo-proyecto" id="titulo-proyecto" placeholder="AGREGA EL NOMBRE DEL PROYECTO"
@@ -131,6 +132,7 @@
     <div class="footer">
       <a href="../index.html" class="texto-footer">Salir</a>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
 
       // Obtener el correo electrónico migrado de localStorage
@@ -142,7 +144,6 @@
 
       var acc = document.getElementsByClassName("accordion");
       var i;
-
       for (i = 0; i < acc.length; i++) {
         acc[i].addEventListener("click", function () {
           this.classList.toggle("active");
@@ -155,50 +156,79 @@
         });
       }
 
-      document.addEventListener('DOMContentLoaded', function () {
-      var form = document.forms['formulario'];
-      var guardarButton = form.querySelector('.guardar');
+      function validarEmail(email) {
+      var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
 
-      guardarButton.addEventListener('click', function (event) {
-        event.preventDefault(); // Evitar que el formulario se envíe
+  document.addEventListener('DOMContentLoaded', function () {
+    var form = document.forms['formulario'];
+    var guardarButton = form.querySelector('.guardar');
+    var emailProfesor = form.elements['email-profesor'];
+    var emailLider = form.elements['email-lider'];
 
-        var inputs = form.querySelectorAll('input');
-        var completo = true;
+    guardarButton.addEventListener('click', function (event) {
+      event.preventDefault();
 
-        inputs.forEach(function (input) {
-          if (input.value.trim() === '') {
-            completo = false;
-            return;
-          }
-        });
+      var inputs = form.querySelectorAll('input');
+      var completo = true;
 
-        function getFormData(form) {
-          const formData = new FormData(form);
-          return Object.fromEntries(formData);
-        }
-
-        if (completo) {
-          const formObj = getFormData(form);
-          const user = JSON.parse(localStorage.getItem('user'));
-          localStorage.setItem(user.email, JSON.stringify(formObj));
-          alert('Sus datos han sido guardados.');
-
-          // Deshabilitar inputs y cambiar color a gris
-          inputs.forEach(function (input) {
-            input.disabled = true;
-            input.style.backgroundColor = '#D8D8D8';
-          });
-        } else {
-          alert('Por favor completar todos los campos.');
+      inputs.forEach(function (input) {
+        if (input.value.trim() === '') {
+          completo = false;
+          return;
         }
       });
+
+      if (!completo) {
+        Swal.fire({
+          text: 'Por favor completar todos los campos',
+          confirmButtonColor: '#354760',
+        });
+        return;
+      }
+
+      if (!validarEmail(emailProfesor.value)) {
+        Swal.fire({
+          text: 'Por favor, ingresa un email válido para el profesor.',
+          confirmButtonColor: '#354760',
+        });
+        return;
+      }
+
+      if (!validarEmail(emailLider.value)) {
+        Swal.fire({
+          text: 'Por favor, ingresa un email válido para el líder del proyecto.',
+          confirmButtonColor: '#354760',
+        });
+        return;
+      }
+
+      function getFormData(form) {
+        const formData = new FormData(form);
+        return Object.fromEntries(formData);
+      }
+
+      const formObj = getFormData(form);
+      const user = JSON.parse(localStorage.getItem('user'));
+      localStorage.setItem(user.email, JSON.stringify(formObj));
+      Swal.fire({
+        text: 'Sus datos han sido guardados',
+        confirmButtonColor: '#354760',
+      });
+
+      inputs.forEach(function (input) {
+        input.disabled = true;
+        input.style.backgroundColor = '#D8D8D8';
+      });
     });
+  });
 
       document.addEventListener("DOMContentLoaded", function () {
         const user = JSON.parse(localStorage.getItem('user'));
         const project = JSON.parse(localStorage.getItem(user.email));
         if (project && project.status) {
-          const calificacion = project.status === 'approved' ? 'Aprobado' : 'Desaprobado';
+          const calificacion = project.status === 'approved' ? 'Video Aprobado' : 'Video Desaprobado';
           document.getElementById('cal-1').innerHTML = `
         <p class="subtitulo-proceso">${calificacion}</p>
       `;
@@ -211,26 +241,45 @@
 
           submitButton.addEventListener("click", function () {
             var urlValue = urlInput.value.trim();
-
+          
             if (urlValue === "") {
-              alert("Debes pegar el link de YouTube");
+              swal.fire({
+                icon: 'warning',
+                title: 'Debes pegar el link de YouTube',
+                showConfirmButton: false,
+                timer: 1500
+              });
             } else {
-              var confirmation = confirm("Estás por enviar el link junto con su información. No podrá editarse nuevamente. ¿Deseas continuar?");
-              const user = JSON.parse(localStorage.getItem('user'));
-              const project = JSON.parse(localStorage.getItem(user.email));
-              localStorage.setItem(user.email, JSON.stringify({ ...project, link: urlValue }));
-              localStorage.setItem('submitted', JSON.stringify([user.email]));
-              if (confirmation) {
-                alert("¡Felicidades, ya subiste tu video! Se lo enviamos a tu profesor para que pueda evaluarlo");
-                urlInput.disabled = true;
-                submitButton.disabled = true;
-                urlInput.style.backgroundColor = '#D8D8D8'
-              }
-            }
-          });
+              swal.fire({
+                icon: 'warning',
+                title: 'Estás por enviar el link junto con su información',
+                text: 'No podrá editarse nuevamente. ¿Deseas continuar?',
+                showCancelButton: true,
+                confirmButtonText: 'Sí',
+                cancelButtonText: 'No'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  const user = JSON.parse(localStorage.getItem('user'));
+                  const project = JSON.parse(localStorage.getItem(user.email));
+                  localStorage.setItem(user.email, JSON.stringify({ ...project, link: urlValue }));
+                  localStorage.setItem('submitted', JSON.stringify([user.email]));
+                  swal.fire({
+                    icon: 'success',
+                    title: '¡Felicidades, ya subiste tu video!',
+                    text: 'Se lo enviamos a tu profesor para que pueda evaluarlo',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  urlInput.disabled = true;
+                  urlInput.style.backgroundColor = '#D8D8D8';
+                  submitButton.disabled = true;
+                  style.backgroundColor = 'lightgray';
+                }
         });
-      });
-
-    </script>
+      }
+    });
+  });
+})
+</script>
 </body>
 </html>

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../css/style2.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="sweetalert2.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
 </head>
 
@@ -280,6 +281,7 @@
     <a href="../index.html" class="texto-footer">Salir</a>
   </div>
   <input type="hidden" id="user-selected" style="display: none;">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
 
     // Obtener el correo electrónico migrado de localStorage
@@ -348,10 +350,19 @@
   document.addEventListener('DOMContentLoaded', function () {
     var btnAprobado = document.getElementById('btnAprobado');
     var btnDesaprobado = document.getElementById('btnDesaprobado');
-
+  
   btnAprobado.addEventListener('click', function () {
-    var confirmacion = confirm('Está por enviar una evaluación de "video aprobado", la cual será irreversible. ¿Desea continuar?');
-    if (confirmacion) {
+    Swal.fire({
+    title: 'Confirmación',
+    text: 'Está por enviar una evaluación de "Video Aprobado", la cual será irreversible. ¿Desea continuar?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // El usuario hizo clic en "Sí"
+      // Tu código aquí
       var projName = document.getElementById('user-selected').value;
       var proj = JSON.parse(localStorage.getItem(projName));
       localStorage.setItem(projName, JSON.stringify({ ...proj, 'status': 'approved' }));
@@ -368,13 +379,27 @@
       document.getElementById('textarea-3').style.backgroundColor = 'lightgray';
       document.getElementById('textarea-4').style.backgroundColor = 'lightgray';
 
-      alert('¡Felicidades! Ya terminaste tu evaluación. Se la enviamos al alumno');
+      Swal.fire({
+      title: '¡Felicidades!',
+      text: 'Ya terminaste tu evaluación. Se la enviamos al alumno',
+      icon: 'success'
+    });
     }
+  });
   });
 
   btnDesaprobado.addEventListener('click', function () {
-    var confirmacion = confirm('Está por enviar una evaluación de "video desaprobado", la cual será irreversible. ¿Desea continuar?');
-    if (confirmacion) {
+    Swal.fire({
+    title: 'Confirmación',
+    text: 'Está por enviar una evaluación de "Video Desaprobado", la cual será irreversible. ¿Desea continuar?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Sí',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // El usuario hizo clic en "Sí"
+      // Tu código aquí
       var projName = document.getElementById('user-selected').value;
       var proj = JSON.parse(localStorage.getItem(projName));
       localStorage.setItem(projName, JSON.stringify({ ...proj, 'status': 'disapproved' }));
@@ -391,9 +416,14 @@
       document.getElementById('textarea-3').style.backgroundColor = 'lightgray';
       document.getElementById('textarea-4').style.backgroundColor = 'lightgray';
 
-      alert('¡Felicidades! Ya terminaste tu evaluación. Se la enviamos al alumno');
+      Swal.fire({
+      title: '¡Felicidades!',
+      text: 'Ya terminaste tu evaluación. Se la enviamos al alumno',
+      icon: 'success'
+    });
     }
   });
+});
 
   loadUsers();
 });

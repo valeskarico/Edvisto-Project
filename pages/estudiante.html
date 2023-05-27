@@ -228,7 +228,7 @@
         const user = JSON.parse(localStorage.getItem('user'));
         const project = JSON.parse(localStorage.getItem(user.email));
         if (project && project.status) {
-          const calificacion = project.status === 'approved' ? 'Video Aprobado' : 'Video Desaprobado';
+          const calificacion = project.status === 'approved' ? '¡MISIÓN CUMPLIDA! El video ha sido APROBADO. El astronauta ha conseguido su primer ítem. Puedes cargar el video del próximo paso cuando esté listo.' : '¡QUEDA POCO PARA CUMPLIR LA MISIÓN! El docente aún no aprueba el video subido. Cuando tengan un nuevo video, vuelvan a subir el link en: “1- PRIMEROS PASOS”.';
           document.getElementById('cal-1').innerHTML = `
         <p class="subtitulo-proceso">${calificacion}</p>
       `;
@@ -246,8 +246,8 @@
               swal.fire({
                 icon: 'warning',
                 title: 'Debes pegar el link de YouTube',
-                showConfirmButton: false,
-                timer: 1500
+                /*showConfirmButton: false,*/
+                confirmButtonColor: '#354760'
               });
             } else {
               swal.fire({
@@ -267,8 +267,8 @@
                     icon: 'success',
                     title: '¡Felicidades, ya subiste tu video!',
                     text: 'Se lo enviamos a tu profesor para que pueda evaluarlo',
-                    showConfirmButton: false,
-                    timer: 1500
+                    /*showConfirmButton: false,*/
+                    confirmButtonColor: '#354760'
                   });
                   urlInput.disabled = true;
                   urlInput.style.backgroundColor = '#D8D8D8';

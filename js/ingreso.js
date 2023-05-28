@@ -1,4 +1,4 @@
-const baseURl = 'https://team-fusion-backend-pr-8.onrender.com';
+const baseURl = 'https://team-fusion-backend-kvzy.onrender.com';
 
 function getFormData(form) {
   const formData = new FormData(form);

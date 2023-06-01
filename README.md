@@ -34,12 +34,15 @@ Hemos implementado una API de autenticación de usuarios para el ingreso a la pl
 
 - [@Documentacion de la API](https://team-fusion-backend-kvzy.onrender.com/docs/#/)
 
+Desarrolladora Backend: [@Lorena Tazzioli](https://github.com/lore-tazzioli)
 
 ## Manual de Usuario
 
 Para obtener información detallada sobre cómo utilizar la plataforma, hemos preparado un manual de usuarios que puedes encontrar en el siguiente enlace:
 
 - [@Manual de Usuario](https://www.behance.net/gallery/171356513/Manual-de-usuario-Plataforma-de-Evaluacion-EdVisto)
+
+Autor: [@Marianela Chaile](https://www.linkedin.com/in/marianela-chaile-digital-designer-/)
 ## Prototipo
 
 Si deseas ver una representación visual de la plataforma, hemos creado un prototipo que puedes explorar en el siguiente enlace: 
@@ -47,3 +50,7 @@ Si deseas ver una representación visual de la plataforma, hemos creado un proto
 - [@Prototipo en Figma](https://www.figma.com/proto/bCq8PnaTSKVTxb7pkeegfn/proto-funcional-edvisto?node-id=2-986&starting-point-node-id=2%3A986)
 
 Esperamos que esta plataforma educativa interactiva ayude a abordar las deficiencias del sistema educativo actual en Latinoamérica y brinde a los estudiantes la oportunidad de aplicar la tecnología de manera productiva en su proceso de aprendizaje. Si tienes alguna pregunta o inquietud, no dudes en contactarnos.
+## Autores
+
+- Desarrollo Frontend [@Valeska Rico](https://github.com/valeskarico)
+- Diseño UX/UI [@Mercedes Espinoza](https://www.linkedin.com/in/licmercedesespinoza/)
